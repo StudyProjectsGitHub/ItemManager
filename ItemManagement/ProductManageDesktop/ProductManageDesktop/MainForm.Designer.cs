@@ -87,6 +87,7 @@
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.tabViewSummary = new System.Windows.Forms.TabPage();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mnuTab.SuspendLayout();
             this.tabStock.SuspendLayout();
@@ -371,6 +372,7 @@
             this.btnRefresh.TabIndex = 9;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnSearch
             // 
@@ -699,6 +701,7 @@
             // 
             // tabViewSummary
             // 
+            this.tabViewSummary.Controls.Add(this.lblHeader);
             this.tabViewSummary.Controls.Add(this.panel1);
             this.tabViewSummary.Location = new System.Drawing.Point(4, 24);
             this.tabViewSummary.Name = "tabViewSummary";
@@ -708,12 +711,21 @@
             this.tabViewSummary.Text = "View Summary";
             this.tabViewSummary.UseVisualStyleBackColor = true;
             // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Location = new System.Drawing.Point(383, 3);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(170, 15);
+            this.lblHeader.TabIndex = 6;
+            this.lblHeader.Text = "View Summary of the Product ";
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(6, 45);
+            this.panel1.Location = new System.Drawing.Point(6, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 415);
+            this.panel1.Size = new System.Drawing.Size(1018, 383);
             this.panel1.TabIndex = 0;
             // 
             // MainForm
@@ -740,6 +752,7 @@
             this.tabRegister.ResumeLayout(false);
             this.tabRegister.PerformLayout();
             this.tabViewSummary.ResumeLayout(false);
+            this.tabViewSummary.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -806,6 +819,7 @@
         private System.Windows.Forms.TextBox txtSReminderAfter;
         private System.Windows.Forms.TabPage tabViewSummary;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblHeader;
     }
 }
 

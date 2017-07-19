@@ -398,5 +398,12 @@ namespace ProductManageDesktop
                 this.ShowErrorMessage(ex);
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Login frm = new Login();
+            frm.ShowDialog(this);
+            frm.Dispose();
+        }
     }
 }
