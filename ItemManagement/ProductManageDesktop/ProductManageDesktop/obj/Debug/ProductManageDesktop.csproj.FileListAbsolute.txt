@@ -30,3 +30,19 @@ D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductMana
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csproj.GenerateResource.Cache
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.exe
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.pdb
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.exe.config
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.exe
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.pdb
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.exe
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.pdb
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.dll
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.dll
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDataLayer.dll
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDataLayer.pdb
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.xml
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.xml
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csprojResolveAssemblyReference.cache
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Login.resources
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.MainForm.resources
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Properties.Resources.resources
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csproj.GenerateResource.Cache
