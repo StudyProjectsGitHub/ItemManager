@@ -9,6 +9,11 @@ namespace ProductManageDataLayer.Entities
 {
     public class ProductMaster
     {
+        public ProductMaster()
+        {
+            ProductHistory = new List<ProductHistory>();
+        }
+
         [Key]
         public int ProductID { get; set; }
 
@@ -33,6 +38,8 @@ namespace ProductManageDataLayer.Entities
         public DateTime Purchase_Date { get; set; }
 
         public DateTime LastUpdated_Date { get; set; }
+
+        public virtual ICollection<ProductHistory> ProductHistory { get; set; }
 
     }
 }

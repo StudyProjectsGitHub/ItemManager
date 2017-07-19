@@ -88,7 +88,7 @@ namespace ProductManageDesktop
 
             if (txtSellingRate.Text.Trim() != string.Empty && txtPurchaseRate.Text.Trim() != string.Empty)
             {
-                if (Convert.ToInt32(txtSellingRate.Text.Trim()) < Convert.ToInt32(txtPurchaseRate.Text.Trim()))
+                if (Convert.ToDecimal(txtSellingRate.Text.Trim()) < Convert.ToDecimal(txtPurchaseRate.Text.Trim()))
                 {
                     this.AddErrorMessage("Seling Rate Can't be Less then Purchase rate");
                 }
@@ -215,10 +215,7 @@ namespace ProductManageDesktop
         /// Interface of ClubMemberService
         /// </summary>
 
-        private void btnEditItem_Click(object sender, EventArgs e)
-        {
-
-        }
+    
         private void mnuTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -226,7 +223,13 @@ namespace ProductManageDesktop
                 if (mnuTab.SelectedIndex == 0)
                 {
                     DataTable data = this.productMasterService.GetAll();
-                    this.LoadDataGridView(data);
+                    this.LoadDataGridView(data, dgCurrentStock);
+                }
+
+                if (mnuTab.SelectedIndex == 1)
+                {
+                    DataTable data = this.productMasterService.GetAll();
+                    this.LoadDataGridView(data, dgvSearchGridview);
                 }
             }
             catch (Exception ex)
@@ -239,12 +242,12 @@ namespace ProductManageDesktop
         /// Method to load data grid view
         /// </summary>
         /// <param name="data">data table</param>
-        private void LoadDataGridView(DataTable data)
+        private void LoadDataGridView(DataTable data, DataGridView grdView)
         {
             // Data grid view column setting            
-            dgCurrentStock.DataSource = data;
-            dgCurrentStock.DataMember = data.TableName;
-            dgCurrentStock.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            grdView.DataSource = data;
+            grdView.DataMember = data.TableName;
+            grdView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         #region Key Press
@@ -314,16 +317,14 @@ namespace ProductManageDesktop
                 {
                     string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
                     productId = int.Parse(id);
-
                     DataRow dataRow = this.productMasterService.GetById(productId);
-
-                    txt2Name.Text = dataRow["Name"].ToString();
-                    //dt2DateOfBirth.Value = Convert.ToDateTime(dataRow["DateOfBirth"]);
-                    //cmb2Occupation.SelectedItem = (Occupation)dataRow["Occupation"];
-                    //cmb2MaritalStatus.SelectedItem = (MaritalStatus)dataRow["MaritalStatus"];
-                    //cmb2HealthStatus.SelectedItem = (HealthStatus)dataRow["HealthStatus"];
-                    //txt2Salary.Text = dataRow["Salary"].ToString() == "0.0000" ? string.Empty : dataRow["Salary"].ToString();
-                    //txt2NoOfChildren.Text = dataRow["NumberOfChildren"].ToString();
+                    txtSProductName.Text = dataRow["Name"].ToString();
+                    txtSHSNNumber.Text = dataRow["HSN"].ToString();
+                    txtSPacking.Text = dataRow["Packing"].ToString()==null ? string.Empty : dataRow["Packing"].ToString();
+                    txtSQuantity.Text = dataRow["Quantity"].ToString() == null ? "0" : dataRow["Quantity"].ToString();
+                    txtSPurchaseRate.Text = dataRow["Purchase_Rate"].ToString() == null ? "0.0" : dataRow["Purchase_Rate"].ToString();
+                    txtSSellingRate.Text = dataRow["Sell_Rate"].ToString() == null ? "0.0" : dataRow["Sell_Rate"].ToString();
+                    txtSReminderAfter.Text = dataRow["Reminder"].ToString() == null ? "0" : dataRow["Reminder"].ToString();
                 }
             }
             catch (Exception ex)

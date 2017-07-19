@@ -32,18 +32,18 @@
             this.tabStock = new System.Windows.Forms.TabPage();
             this.dgCurrentStock = new System.Windows.Forms.DataGridView();
             this.tabSearchManage = new System.Windows.Forms.TabPage();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSHSNNumber = new System.Windows.Forms.TextBox();
+            this.txtSPacking = new System.Windows.Forms.TextBox();
+            this.txtSPurchaseRate = new System.Windows.Forms.TextBox();
+            this.txtSSellingRate = new System.Windows.Forms.TextBox();
+            this.txtSReminderAfter = new System.Windows.Forms.TextBox();
             this.lbl2NoOfChildren = new System.Windows.Forms.Label();
             this.lbl2HealthStatus = new System.Windows.Forms.Label();
             this.lbl2MaritalStatus = new System.Windows.Forms.Label();
             this.lbl2Salary = new System.Windows.Forms.Label();
-            this.txt2Salary = new System.Windows.Forms.TextBox();
+            this.txtSQuantity = new System.Windows.Forms.TextBox();
             this.lbl2Occupation = new System.Windows.Forms.Label();
-            this.txt2Name = new System.Windows.Forms.TextBox();
+            this.txtSProductName = new System.Windows.Forms.TextBox();
             this.lbl2DateOfBirth = new System.Windows.Forms.Label();
             this.lbl2Name = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -71,7 +71,6 @@
             this.txtSellingRate = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnEditItem = new System.Windows.Forms.Button();
             this.lblHealthStatusRequired = new System.Windows.Forms.Label();
             this.lblMaritalStatusRequired = new System.Windows.Forms.Label();
             this.lblOccupationRequired = new System.Windows.Forms.Label();
@@ -132,18 +131,18 @@
             // tabSearchManage
             // 
             this.tabSearchManage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tabSearchManage.Controls.Add(this.textBox6);
-            this.tabSearchManage.Controls.Add(this.textBox5);
-            this.tabSearchManage.Controls.Add(this.textBox4);
-            this.tabSearchManage.Controls.Add(this.textBox3);
-            this.tabSearchManage.Controls.Add(this.textBox2);
+            this.tabSearchManage.Controls.Add(this.txtSHSNNumber);
+            this.tabSearchManage.Controls.Add(this.txtSPacking);
+            this.tabSearchManage.Controls.Add(this.txtSPurchaseRate);
+            this.tabSearchManage.Controls.Add(this.txtSSellingRate);
+            this.tabSearchManage.Controls.Add(this.txtSReminderAfter);
             this.tabSearchManage.Controls.Add(this.lbl2NoOfChildren);
             this.tabSearchManage.Controls.Add(this.lbl2HealthStatus);
             this.tabSearchManage.Controls.Add(this.lbl2MaritalStatus);
             this.tabSearchManage.Controls.Add(this.lbl2Salary);
-            this.tabSearchManage.Controls.Add(this.txt2Salary);
+            this.tabSearchManage.Controls.Add(this.txtSQuantity);
             this.tabSearchManage.Controls.Add(this.lbl2Occupation);
-            this.tabSearchManage.Controls.Add(this.txt2Name);
+            this.tabSearchManage.Controls.Add(this.txtSProductName);
             this.tabSearchManage.Controls.Add(this.lbl2DateOfBirth);
             this.tabSearchManage.Controls.Add(this.lbl2Name);
             this.tabSearchManage.Controls.Add(this.btnUpdate);
@@ -157,50 +156,50 @@
             this.tabSearchManage.TabIndex = 1;
             this.tabSearchManage.Text = "Search / Update Stocks";
             // 
-            // textBox6
+            // txtSHSNNumber
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(843, 167);
-            this.textBox6.MaxLength = 12;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(152, 21);
-            this.textBox6.TabIndex = 44;
+            this.txtSHSNNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSHSNNumber.Location = new System.Drawing.Point(843, 167);
+            this.txtSHSNNumber.MaxLength = 12;
+            this.txtSHSNNumber.Name = "txtSHSNNumber";
+            this.txtSHSNNumber.Size = new System.Drawing.Size(152, 21);
+            this.txtSHSNNumber.TabIndex = 44;
             // 
-            // textBox5
+            // txtSPacking
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(843, 206);
-            this.textBox5.MaxLength = 12;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 21);
-            this.textBox5.TabIndex = 43;
+            this.txtSPacking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSPacking.Location = new System.Drawing.Point(843, 206);
+            this.txtSPacking.MaxLength = 12;
+            this.txtSPacking.Name = "txtSPacking";
+            this.txtSPacking.Size = new System.Drawing.Size(152, 21);
+            this.txtSPacking.TabIndex = 43;
             // 
-            // textBox4
+            // txtSPurchaseRate
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(843, 275);
-            this.textBox4.MaxLength = 12;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 21);
-            this.textBox4.TabIndex = 42;
+            this.txtSPurchaseRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSPurchaseRate.Location = new System.Drawing.Point(843, 275);
+            this.txtSPurchaseRate.MaxLength = 12;
+            this.txtSPurchaseRate.Name = "txtSPurchaseRate";
+            this.txtSPurchaseRate.Size = new System.Drawing.Size(152, 21);
+            this.txtSPurchaseRate.TabIndex = 42;
             // 
-            // textBox3
+            // txtSSellingRate
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(843, 316);
-            this.textBox3.MaxLength = 12;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 21);
-            this.textBox3.TabIndex = 41;
+            this.txtSSellingRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSSellingRate.Location = new System.Drawing.Point(843, 316);
+            this.txtSSellingRate.MaxLength = 12;
+            this.txtSSellingRate.Name = "txtSSellingRate";
+            this.txtSSellingRate.Size = new System.Drawing.Size(152, 21);
+            this.txtSSellingRate.TabIndex = 41;
             // 
-            // textBox2
+            // txtSReminderAfter
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(846, 349);
-            this.textBox2.MaxLength = 12;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 21);
-            this.textBox2.TabIndex = 40;
+            this.txtSReminderAfter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSReminderAfter.Location = new System.Drawing.Point(846, 349);
+            this.txtSReminderAfter.MaxLength = 12;
+            this.txtSReminderAfter.Name = "txtSReminderAfter";
+            this.txtSReminderAfter.Size = new System.Drawing.Size(149, 21);
+            this.txtSReminderAfter.TabIndex = 40;
             // 
             // lbl2NoOfChildren
             // 
@@ -238,14 +237,14 @@
             this.lbl2Salary.TabIndex = 28;
             this.lbl2Salary.Text = "Quantity";
             // 
-            // txt2Salary
+            // txtSQuantity
             // 
-            this.txt2Salary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt2Salary.Location = new System.Drawing.Point(843, 238);
-            this.txt2Salary.MaxLength = 12;
-            this.txt2Salary.Name = "txt2Salary";
-            this.txt2Salary.Size = new System.Drawing.Size(152, 21);
-            this.txt2Salary.TabIndex = 26;
+            this.txtSQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSQuantity.Location = new System.Drawing.Point(843, 238);
+            this.txtSQuantity.MaxLength = 12;
+            this.txtSQuantity.Name = "txtSQuantity";
+            this.txtSQuantity.Size = new System.Drawing.Size(152, 21);
+            this.txtSQuantity.TabIndex = 26;
             // 
             // lbl2Occupation
             // 
@@ -256,13 +255,13 @@
             this.lbl2Occupation.TabIndex = 27;
             this.lbl2Occupation.Text = "Packing";
             // 
-            // txt2Name
+            // txtSProductName
             // 
-            this.txt2Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt2Name.Location = new System.Drawing.Point(843, 138);
-            this.txt2Name.Name = "txt2Name";
-            this.txt2Name.Size = new System.Drawing.Size(152, 21);
-            this.txt2Name.TabIndex = 23;
+            this.txtSProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSProductName.Location = new System.Drawing.Point(843, 138);
+            this.txtSProductName.Name = "txtSProductName";
+            this.txtSProductName.Size = new System.Drawing.Size(152, 21);
+            this.txtSProductName.TabIndex = 23;
             // 
             // lbl2DateOfBirth
             // 
@@ -437,7 +436,6 @@
             this.tabRegister.Controls.Add(this.txtSellingRate);
             this.tabRegister.Controls.Add(this.label7);
             this.tabRegister.Controls.Add(this.label6);
-            this.tabRegister.Controls.Add(this.btnEditItem);
             this.tabRegister.Controls.Add(this.lblHealthStatusRequired);
             this.tabRegister.Controls.Add(this.lblMaritalStatusRequired);
             this.tabRegister.Controls.Add(this.lblOccupationRequired);
@@ -546,17 +544,6 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Reminder After";
             // 
-            // btnEditItem
-            // 
-            this.btnEditItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditItem.Location = new System.Drawing.Point(423, 204);
-            this.btnEditItem.Name = "btnEditItem";
-            this.btnEditItem.Size = new System.Drawing.Size(123, 28);
-            this.btnEditItem.TabIndex = 23;
-            this.btnEditItem.Text = "Update";
-            this.btnEditItem.UseVisualStyleBackColor = true;
-            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
-            // 
             // lblHealthStatusRequired
             // 
             this.lblHealthStatusRequired.AutoSize = true;
@@ -652,7 +639,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(251, 204);
+            this.btnAdd.Location = new System.Drawing.Point(383, 195);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 28);
             this.btnAdd.TabIndex = 9;
@@ -757,9 +744,9 @@
         private System.Windows.Forms.Label lbl2HealthStatus;
         private System.Windows.Forms.Label lbl2MaritalStatus;
         private System.Windows.Forms.Label lbl2Salary;
-        private System.Windows.Forms.TextBox txt2Salary;
+        private System.Windows.Forms.TextBox txtSQuantity;
         private System.Windows.Forms.Label lbl2Occupation;
-        private System.Windows.Forms.TextBox txt2Name;
+        private System.Windows.Forms.TextBox txtSProductName;
         private System.Windows.Forms.Label lbl2DateOfBirth;
         private System.Windows.Forms.Label lbl2Name;
         private System.Windows.Forms.Button btnUpdate;
@@ -773,7 +760,6 @@
         private System.Windows.Forms.DataGridView dgvSearchGridview;
         private System.Windows.Forms.TabPage tabStock;
         private System.Windows.Forms.DataGridView dgCurrentStock;
-        private System.Windows.Forms.Button btnEditItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtHsnNumber;
@@ -787,11 +773,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSHSNNumber;
+        private System.Windows.Forms.TextBox txtSPacking;
+        private System.Windows.Forms.TextBox txtSPurchaseRate;
+        private System.Windows.Forms.TextBox txtSSellingRate;
+        private System.Windows.Forms.TextBox txtSReminderAfter;
     }
 }
 

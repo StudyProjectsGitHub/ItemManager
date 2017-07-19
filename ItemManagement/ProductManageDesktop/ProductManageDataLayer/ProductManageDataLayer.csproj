@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Context\ProductManagementDbContext.cs" />
     <Compile Include="Entities\ClubMember.cs" />
+    <Compile Include="Entities\ProductHistory.cs" />
     <Compile Include="Entities\ProductMaster.cs" />
     <Compile Include="Extension\ListExtension.cs" />
     <Compile Include="Initializer\ItemManagementInitializer.cs" />
