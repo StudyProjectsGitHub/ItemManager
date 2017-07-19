@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,12 @@ namespace ProductManageDataLayer.Entities
         public ProductMaster()
         {
             ProductHistory = new List<ProductHistory>();
-        }
 
+        }
         [Key]
         public int ProductID { get; set; }
 
+       
         public string Name { get; set; }
 
         public string Description { get; set; }

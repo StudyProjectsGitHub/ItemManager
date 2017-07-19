@@ -42,6 +42,18 @@ namespace ProductManageDataLayer.Service
             }
         }
 
+        /// <summary>
+        /// Service method to get all club members
+        /// </summary>
+        /// <returns>Data table</returns>
+        public DataTable GetAllReminders()
+        {
+            using (var context = new ProductManagementDbContext())
+            {
+                IList<ProductMaster> lstProducts = context.Products.Where(x=>x.Quantity <= x.Reminder).ToList();
+                return lstProducts.ToDataTable<ProductMaster>();
+            }
+        }
 
         /// <summary>
         /// Service method to get club member by Id

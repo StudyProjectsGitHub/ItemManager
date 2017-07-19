@@ -89,6 +89,7 @@
             this.tabViewSummary = new System.Windows.Forms.TabPage();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvReminderGrid = new System.Windows.Forms.DataGridView();
             this.mnuTab.SuspendLayout();
             this.tabStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).BeginInit();
@@ -100,6 +101,8 @@
             this.tabControl2.SuspendLayout();
             this.tabRegister.SuspendLayout();
             this.tabViewSummary.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReminderGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuTab
@@ -123,7 +126,7 @@
             this.tabStock.Name = "tabStock";
             this.tabStock.Size = new System.Drawing.Size(1027, 466);
             this.tabStock.TabIndex = 2;
-            this.tabStock.Text = "Current Stock";
+            this.tabStock.Text = "Products";
             this.tabStock.UseVisualStyleBackColor = true;
             // 
             // dgCurrentStock
@@ -410,6 +413,7 @@
             this.dgvSearchGridview.TabIndex = 45;
             this.dgvSearchGridview.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSearchGridview_CellFormatting);
             this.dgvSearchGridview.SelectionChanged += new System.EventHandler(this.dgvSearchGridview_SelectionChanged);
+            this.dgvSearchGridview.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvSearchGridview_MouseDoubleClick);
             // 
             // tabRegistration
             // 
@@ -708,25 +712,35 @@
             this.tabViewSummary.Padding = new System.Windows.Forms.Padding(3);
             this.tabViewSummary.Size = new System.Drawing.Size(1027, 466);
             this.tabViewSummary.TabIndex = 3;
-            this.tabViewSummary.Text = "View Summary";
+            this.tabViewSummary.Text = "View Reminders";
             this.tabViewSummary.UseVisualStyleBackColor = true;
             // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.Red;
             this.lblHeader.Location = new System.Drawing.Point(383, 3);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(170, 15);
+            this.lblHeader.Size = new System.Drawing.Size(243, 15);
             this.lblHeader.TabIndex = 6;
-            this.lblHeader.Text = "View Summary of the Product ";
+            this.lblHeader.Text = "Stocks Need to Be Updated Soon!!!!!!";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(6, 77);
+            this.panel1.Controls.Add(this.dgvReminderGrid);
+            this.panel1.Location = new System.Drawing.Point(6, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 383);
+            this.panel1.Size = new System.Drawing.Size(1018, 439);
             this.panel1.TabIndex = 0;
+            // 
+            // dgvReminderGrid
+            // 
+            this.dgvReminderGrid.Location = new System.Drawing.Point(3, 3);
+            this.dgvReminderGrid.Name = "dgvReminderGrid";
+            this.dgvReminderGrid.Size = new System.Drawing.Size(1008, 434);
+            this.dgvReminderGrid.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -753,6 +767,8 @@
             this.tabRegister.PerformLayout();
             this.tabViewSummary.ResumeLayout(false);
             this.tabViewSummary.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReminderGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -820,6 +836,7 @@
         private System.Windows.Forms.TabPage tabViewSummary;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
+        private System.Windows.Forms.DataGridView dgvReminderGrid;
     }
 }
 

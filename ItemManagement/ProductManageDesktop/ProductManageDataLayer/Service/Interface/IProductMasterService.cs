@@ -24,6 +24,11 @@ namespace ProductManageDataLayer.Service.Interface
         DataTable GetAll();
 
         /// <summary>
+        /// Get all stocks whoes quantity is getting out of stock and reached the reminder level
+        /// </summary>
+        /// <returns></returns>
+        DataTable GetAllReminders();
+        /// <summary>
         /// Method to update ProductMaster details
         /// </summary>
         /// <param name="clubMember">club member</param>

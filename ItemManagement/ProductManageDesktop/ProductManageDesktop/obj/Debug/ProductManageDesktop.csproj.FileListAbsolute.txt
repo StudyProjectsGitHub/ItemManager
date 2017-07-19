@@ -46,3 +46,4 @@ F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesk
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.MainForm.resources
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Properties.Resources.resources
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csproj.GenerateResource.Cache
+F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Summary.resources

@@ -35,24 +35,24 @@ namespace ProductManageDesktop
         {
             InitializeComponent();
             this.productMasterService = new ProductMasterService();
-            this.InitilizeDataGridViewStyle();
+            this.InitilizeDataGridViewStyle(dgCurrentStock);
         }
 
 
-        private void InitilizeDataGridViewStyle()
+        private void InitilizeDataGridViewStyle(DataGridView dgv)
         {
             // Setting the style of the DataGridView control
-            dgCurrentStock.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold, GraphicsUnit.Point);
-            dgCurrentStock.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.ControlDark;
-            dgCurrentStock.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgCurrentStock.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgCurrentStock.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular, GraphicsUnit.Point);
-            dgCurrentStock.DefaultCellStyle.BackColor = Color.Empty;
-            dgCurrentStock.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
-            dgCurrentStock.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            dgCurrentStock.GridColor = SystemColors.ControlDarkDark;
-            dgCurrentStock.AllowUserToAddRows = false;
-            dgCurrentStock.ReadOnly = true;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold, GraphicsUnit.Point);
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.ControlDark;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular, GraphicsUnit.Point);
+            dgv.DefaultCellStyle.BackColor = Color.Empty;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dgv.GridColor = SystemColors.ControlDarkDark;
+            dgv.AllowUserToAddRows = false;
+            dgv.ReadOnly = true;
         }
 
         /// <summary>
@@ -184,22 +184,7 @@ namespace ProductManageDesktop
             }
         }
 
-        /// <summary>
-        /// Reset the Text boxes 
-        /// </summary>
-        private void ResetProductRegistration()
-        {
-            txtProductName.Text = string.Empty;
-            txtProductDescription.Text = string.Empty;
-            txtHsnNumber.Text = string.Empty;
-            txtPurchaseRate.Text = string.Empty;
-            txtPacking.Text = string.Empty;
-            txtSellingRate.Text = string.Empty;
-            txtQuantity.Text = string.Empty;
-            txtReminderAfter.Text = string.Empty;
-            txtDealerName.Text = string.Empty;
-
-        }
+   
 
         /// <summary>
         /// Method to show general error message on any system level exception
@@ -217,7 +202,7 @@ namespace ProductManageDesktop
         /// Interface of ClubMemberService
         /// </summary>
 
-    
+        
         private void mnuTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -227,11 +212,18 @@ namespace ProductManageDesktop
                     DataTable data = this.productMasterService.GetAll();
                     this.LoadDataGridView(data, dgCurrentStock);
                 }
-
+                // Searh grid View
                 if (mnuTab.SelectedIndex == 1)
                 {
                     DataTable data = this.productMasterService.GetAll();
                     this.LoadDataGridView(data, dgvSearchGridview);
+                }
+
+                // Searh grid View
+                if (mnuTab.SelectedIndex == 3)
+                {
+                    DataTable data = this.productMasterService.GetAllReminders();
+                    this.LoadDataGridView(data, dgvReminderGrid);
                 }
             }
             catch (Exception ex)
@@ -246,11 +238,28 @@ namespace ProductManageDesktop
         /// <param name="data">data table</param>
         private void LoadDataGridView(DataTable data, DataGridView grdView)
         {
-            // Data grid view column setting            
+            // change datatable column name
+            data.Columns[0].ColumnName = "ID";
+            data.Columns[1].ColumnName = "Product Name";
+            data.Columns[4].ColumnName = "Purchase Rate #";
+            data.Columns[6].ColumnName = "Sell Rate #";
+            data.Columns[9].ColumnName = "Dealer";
+            data.Columns[10].ColumnName = "Date Added";
+            data.Columns[11].ColumnName = "Date Last Updated";
+
+            
+        
+
+            // Data grid view column setting   
+            InitilizeDataGridViewStyle(grdView);
             grdView.DataSource = data;
             grdView.DataMember = data.TableName;
+            // Hide Columns
+            grdView.Columns["ID"].Visible = false;
+            grdView.Columns["ProductHistory"].Visible = false;
             grdView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
            
+
         }
 
         #region Key Press
@@ -352,8 +361,6 @@ namespace ProductManageDesktop
             }
         }
 
-        #endregion
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -361,14 +368,13 @@ namespace ProductManageDesktop
                 DateTime dtStartDate = DateTime.MinValue;
                 DateTime dtFromDate = dtSFromDate.Value;
 
-                if(dtSFromDate.Value.Date != System.DateTime.Today.Date)
+                if (dtSFromDate.Value.Date != System.DateTime.Today.Date)
                 {
                     dtStartDate = dtSFromDate.Value;
                 }
 
 
                 DataTable data = this.productMasterService.Search(dtStartDate, dtFromDate, txtSProductNameSearch.Text);
-
                 this.LoadDataGridView(data, dgvSearchGridview);
             }
             catch (Exception ex)
@@ -401,9 +407,76 @@ namespace ProductManageDesktop
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Login frm = new Login();
-            frm.ShowDialog(this);
-            frm.Dispose();
+            DataTable data = this.productMasterService.GetAll();
+            this.LoadDataGridView(data, dgvSearchGridview);
+            ResetSearchPage();
         }
+        #endregion
+
+
+
+        private void dgvSearchGridview_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            try
+            {
+                if (dgv.SelectedRows.Count > 0)
+                {
+                    string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
+                    int cellId = 0;
+                    if (int.TryParse(id, out cellId) && cellId > 0)
+                    {
+                        Summary summary = new Summary();
+                        summary.productId = cellId;
+                        summary.ShowDialog(this);
+                        summary.Dispose();
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+
+        #region Reset Section
+
+        /// <summary>
+        /// Reset the Text boxes 
+        /// </summary>
+        private void ResetProductRegistration()
+        {
+            txtProductName.Text = string.Empty;
+            txtProductDescription.Text = string.Empty;
+            txtHsnNumber.Text = string.Empty;
+            txtPurchaseRate.Text = string.Empty;
+            txtPacking.Text = string.Empty;
+            txtSellingRate.Text = string.Empty;
+            txtQuantity.Text = string.Empty;
+            txtReminderAfter.Text = string.Empty;
+            txtDealerName.Text = string.Empty;
+
+        }
+
+
+        /// <summary>
+        /// Reset the Text boxes 
+        /// </summary>
+        private void ResetSearchPage()
+        {
+            txtSProductName.Text = string.Empty;
+            txtSHSNNumber.Text =string.Empty;
+            txtSPacking.Text = string.Empty;
+            txtSQuantity.Text = string.Empty;
+            txtSPurchaseRate.Text = string.Empty;
+            txtSSellingRate.Text = string.Empty;
+            txtSReminderAfter.Text = string.Empty;
+            txtSProductNameSearch.Text = string.Empty;
+        }
+
+        #endregion
     }
 }
