@@ -14,19 +14,3 @@ F:\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductMan
 F:\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.dll
 F:\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.xml
 F:\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Login.resources
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.exe.config
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.exe
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.pdb
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDataLayer.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDataLayer.pdb
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.xml
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.xml
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csprojResolveAssemblyReference.cache
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Login.resources
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.MainForm.resources
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Properties.Resources.resources
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csproj.GenerateResource.Cache
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.exe
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.pdb

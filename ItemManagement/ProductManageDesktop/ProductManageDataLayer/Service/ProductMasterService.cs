@@ -59,27 +59,21 @@ namespace ProductManageDataLayer.Service
             }
         }
 
-        ///// <summary>
-        ///// Service method to search records by multiple parameters
-        ///// </summary>
-        ///// <param name="occupation">occupation value</param>
-        ///// <param name="maritalStatus">marital status</param>
-        ///// <param name="operand">AND OR operand</param>
-        ///// <returns>Data table</returns>
-        //public DataTable Search(int occupation, int maritalStatus, string operand)
-        //{
-        //    using (var context = new ProductManagementDbContext())
-        //    {
-        //        List<ClubMember> members = context.ClubMembers.Where(i => operand == "AND" ?
-        //            (occupation == 0 || occupation == i.Occupation) &&
-        //            (maritalStatus == 0 || maritalStatus == i.MaritalStatus) :
-        //            (occupation == 0 || occupation == i.Occupation) ||
-        //            (maritalStatus == 0 || maritalStatus == i.MaritalStatus))
-        //            .ToList();
-
-        //        return members.ToDataTable<ClubMember>();
-        //    }
-        //}
+        /// <summary>
+        /// Service method to search records by multiple parameters
+        /// </summary>
+        /// <param name="occupation">occupation value</param>
+        /// <param name="maritalStatus">marital status</param>
+        /// <param name="operand">AND OR operand</param>
+        /// <returns>Data table</returns>
+        public DataTable Search(DateTime startDate, DateTime endDate, string name)
+        {
+            using (var context = new ProductManagementDbContext())
+            {
+                List<ProductMaster> members = context.Products.Where(i => i.Name.StartsWith(name) &&  (i.LastUpdated_Date > startDate || i.LastUpdated_Date < endDate)).ToList();
+                return members.ToDataTable<ProductMaster>();
+            }
+        }
 
 
         /// <summary>

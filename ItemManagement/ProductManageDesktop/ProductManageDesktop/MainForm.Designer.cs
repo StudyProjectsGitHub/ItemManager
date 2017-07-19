@@ -50,10 +50,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSProductNameSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtSToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtSFromDate = new System.Windows.Forms.DateTimePicker();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,6 +86,8 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.tabViewSummary = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.mnuTab.SuspendLayout();
             this.tabStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).BeginInit();
@@ -96,6 +98,7 @@
             this.tabRegistration.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabRegister.SuspendLayout();
+            this.tabViewSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnuTab
@@ -103,6 +106,7 @@
             this.mnuTab.Controls.Add(this.tabStock);
             this.mnuTab.Controls.Add(this.tabSearchManage);
             this.mnuTab.Controls.Add(this.tabRegistration);
+            this.mnuTab.Controls.Add(this.tabViewSummary);
             this.mnuTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuTab.Location = new System.Drawing.Point(19, 10);
             this.mnuTab.Name = "mnuTab";
@@ -310,10 +314,10 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBox1);
+            this.tabPage3.Controls.Add(this.txtSProductNameSearch);
             this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.dateTimePicker2);
-            this.tabPage3.Controls.Add(this.dateTimePicker1);
+            this.tabPage3.Controls.Add(this.dtSToDate);
+            this.tabPage3.Controls.Add(this.dtSFromDate);
             this.tabPage3.Controls.Add(this.btnRefresh);
             this.tabPage3.Controls.Add(this.btnSearch);
             this.tabPage3.Controls.Add(this.label4);
@@ -326,14 +330,15 @@
             this.tabPage3.Text = "Search";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtSProductNameSearch
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(352, 35);
-            this.textBox1.MaxLength = 12;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 21);
-            this.textBox1.TabIndex = 27;
+            this.txtSProductNameSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSProductNameSearch.Location = new System.Drawing.Point(352, 35);
+            this.txtSProductNameSearch.MaxLength = 12;
+            this.txtSProductNameSearch.Name = "txtSProductNameSearch";
+            this.txtSProductNameSearch.Size = new System.Drawing.Size(114, 21);
+            this.txtSProductNameSearch.TabIndex = 27;
+            this.txtSProductNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSProductNameSearch_KeyPress);
             // 
             // label8
             // 
@@ -344,19 +349,19 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Product Name";
             // 
-            // dateTimePicker2
+            // dtSToDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(193, 35);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(143, 21);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dtSToDate.Location = new System.Drawing.Point(193, 35);
+            this.dtSToDate.Name = "dtSToDate";
+            this.dtSToDate.Size = new System.Drawing.Size(143, 21);
+            this.dtSToDate.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dtSFromDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(32, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(143, 21);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtSFromDate.Location = new System.Drawing.Point(32, 35);
+            this.dtSFromDate.Name = "dtSFromDate";
+            this.dtSFromDate.Size = new System.Drawing.Size(143, 21);
+            this.dtSFromDate.TabIndex = 10;
             // 
             // btnRefresh
             // 
@@ -375,6 +380,7 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label4
             // 
@@ -691,6 +697,25 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Product Name";
             // 
+            // tabViewSummary
+            // 
+            this.tabViewSummary.Controls.Add(this.panel1);
+            this.tabViewSummary.Location = new System.Drawing.Point(4, 24);
+            this.tabViewSummary.Name = "tabViewSummary";
+            this.tabViewSummary.Padding = new System.Windows.Forms.Padding(3);
+            this.tabViewSummary.Size = new System.Drawing.Size(1027, 466);
+            this.tabViewSummary.TabIndex = 3;
+            this.tabViewSummary.Text = "View Summary";
+            this.tabViewSummary.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(6, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1018, 415);
+            this.panel1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,6 +739,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabRegister.ResumeLayout(false);
             this.tabRegister.PerformLayout();
+            this.tabViewSummary.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -769,15 +795,17 @@
         private System.Windows.Forms.TextBox txtPurchaseRate;
         private System.Windows.Forms.TextBox txtDealerName;
         private System.Windows.Forms.TextBox txtSellingRate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtSFromDate;
+        private System.Windows.Forms.DateTimePicker dtSToDate;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSProductNameSearch;
         private System.Windows.Forms.TextBox txtSHSNNumber;
         private System.Windows.Forms.TextBox txtSPacking;
         private System.Windows.Forms.TextBox txtSPurchaseRate;
         private System.Windows.Forms.TextBox txtSSellingRate;
         private System.Windows.Forms.TextBox txtSReminderAfter;
+        private System.Windows.Forms.TabPage tabViewSummary;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

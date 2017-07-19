@@ -51,6 +51,8 @@ namespace ProductManageDesktop
             dgCurrentStock.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
             dgCurrentStock.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             dgCurrentStock.GridColor = SystemColors.ControlDarkDark;
+            dgCurrentStock.AllowUserToAddRows = false;
+            dgCurrentStock.ReadOnly = true;
         }
 
         /// <summary>
@@ -248,6 +250,7 @@ namespace ProductManageDesktop
             grdView.DataSource = data;
             grdView.DataMember = data.TableName;
             grdView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+           
         }
 
         #region Key Press
@@ -350,5 +353,50 @@ namespace ProductManageDesktop
         }
 
         #endregion
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime dtStartDate = DateTime.MinValue;
+                DateTime dtFromDate = dtSFromDate.Value;
+
+                if(dtSFromDate.Value.Date != System.DateTime.Today.Date)
+                {
+                    dtStartDate = dtSFromDate.Value;
+                }
+
+
+                DataTable data = this.productMasterService.Search(dtStartDate, dtFromDate, txtSProductNameSearch.Text);
+
+                this.LoadDataGridView(data, dgvSearchGridview);
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void txtSProductNameSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                DateTime dtStartDate = DateTime.MinValue;
+                DateTime dtFromDate = dtSFromDate.Value;
+
+                if (dtSFromDate.Value.Date != System.DateTime.Today.Date)
+                {
+                    dtStartDate = dtSFromDate.Value;
+                }
+
+                DataTable data = this.productMasterService.Search(dtStartDate, dtFromDate, txtSProductNameSearch.Text);
+
+                this.LoadDataGridView(data, dgvSearchGridview);
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
     }
 }

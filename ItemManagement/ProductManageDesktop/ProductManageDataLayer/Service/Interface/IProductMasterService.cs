@@ -44,13 +44,13 @@ namespace ProductManageDataLayer.Service.Interface
         /// <returns>Data table</returns>
         DataRow GetById(int Id);
 
-        ///// <summary>
-        ///// Service method to search records by multiple parameters
-        ///// </summary>
-        ///// <param name="occupation">occupation value</param>
-        ///// <param name="maritalStatus">marital status</param>
-        ///// <param name="operand">AND OR operand</param>
-        ///// <returns>Data table</returns>
-        //DataTable Search(int occupation, int maritalStatus, string operand);
+        /// <summary>
+        /// Service method to search records by multiple parameters
+        /// </summary>
+        /// <param name="occupation">occupation value</param>
+        /// <param name="maritalStatus">marital status</param>
+        /// <param name="operand">AND OR operand</param>
+        /// <returns>Data table</returns>
+        DataTable Search(DateTime startDate, DateTime endDate, string pName);
     }
 }
