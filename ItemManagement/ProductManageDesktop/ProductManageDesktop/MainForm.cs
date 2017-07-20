@@ -385,21 +385,6 @@ namespace ProductManageDesktop
             }
         }
 
-        private void dgvSearchGridview_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            try
-            {
-                //if (e.ColumnIndex == 2)
-                //{
-                //    e.Value = string.Format("{0:dd/MM/yyyy}", (DateTime)e.Value);
-                //}
-
-            }
-            catch (Exception ex)
-            {
-                this.ShowErrorMessage(ex);
-            }
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -556,7 +541,11 @@ namespace ProductManageDesktop
         {
             try
             {
-                return true;
+                // TO:DO Validation that u cant add more than godown quantity to the shop
+                if (txtSQuantity.Text.Trim() != string.Empty)
+                    return true;
+                else
+                    return false;
 
             }
             catch (Exception ex)
@@ -733,6 +722,18 @@ namespace ProductManageDesktop
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgCurrentStock_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgCurrentStock.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["Reminder"].Value) >=  Convert.ToInt32(row.Cells["Quantity"].Value))
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+
+            }
         }
     }
 }

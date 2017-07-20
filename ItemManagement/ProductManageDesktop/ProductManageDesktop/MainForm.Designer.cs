@@ -137,6 +137,7 @@
             this.dgCurrentStock.Name = "dgCurrentStock";
             this.dgCurrentStock.Size = new System.Drawing.Size(1024, 488);
             this.dgCurrentStock.TabIndex = 0;
+            this.dgCurrentStock.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgCurrentStock_CellFormatting);
             // 
             // tabSearchManage
             // 
@@ -437,7 +438,6 @@
             this.dgvSearchGridview.Name = "dgvSearchGridview";
             this.dgvSearchGridview.Size = new System.Drawing.Size(711, 358);
             this.dgvSearchGridview.TabIndex = 45;
-            this.dgvSearchGridview.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSearchGridview_CellFormatting);
             this.dgvSearchGridview.SelectionChanged += new System.EventHandler(this.dgvSearchGridview_SelectionChanged);
             this.dgvSearchGridview.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvSearchGridview_MouseDoubleClick);
             // 

@@ -1,0 +1,10 @@
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\ProductManageDataLayer.dll.config
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\ProductManageDataLayer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.SqlServer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.SqlServer.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Release\ProductManageDataLayer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Release\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Release\ProductManageDataLayer.csprojResolveAssemblyReference.cache

@@ -1,0 +1,17 @@
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\ProductManageDesktop.exe.config
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\ProductManageDesktop.exe
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\ProductManageDesktop.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\EntityFramework.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\EntityFramework.SqlServer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\ProductManageDataLayer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\EntityFramework.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\EntityFramework.SqlServer.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.csprojResolveAssemblyReference.cache
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.Login.resources
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.MainForm.resources
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.Properties.Resources.resources
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.Summary.resources
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.csproj.GenerateResource.Cache
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.exe
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.pdb

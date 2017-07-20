@@ -36,10 +36,14 @@ D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductMana
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDesktop.pdb
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.dll
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\MahApps.Metro.dll
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDataLayer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\System.Windows.Interactivity.dll
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\ProductManageDataLayer.pdb
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.xml
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\MahApps.Metro.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Debug\MahApps.Metro.xml
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.csprojResolveAssemblyReference.cache
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.Login.resources
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Debug\ProductManageDesktop.MainForm.resources
