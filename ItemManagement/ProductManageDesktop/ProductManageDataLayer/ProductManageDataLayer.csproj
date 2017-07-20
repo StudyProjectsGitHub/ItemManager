@@ -58,7 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ClubMemberService.cs" />
     <Compile Include="Service\Interface\IClubMemberService.cs" />
+    <Compile Include="Service\Interface\IProductHistoryService.cs" />
     <Compile Include="Service\Interface\IProductMasterService.cs" />
+    <Compile Include="Service\ProductHistoryService.cs" />
     <Compile Include="Service\ProductMasterService.cs" />
   </ItemGroup>
   <ItemGroup>

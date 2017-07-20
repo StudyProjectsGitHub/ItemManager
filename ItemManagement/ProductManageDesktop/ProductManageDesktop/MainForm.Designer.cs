@@ -32,6 +32,8 @@
             this.tabStock = new System.Windows.Forms.TabPage();
             this.dgCurrentStock = new System.Windows.Forms.DataGridView();
             this.tabSearchManage = new System.Windows.Forms.TabPage();
+            this.btnSDelete = new System.Windows.Forms.Button();
+            this.btnSUpdate = new System.Windows.Forms.Button();
             this.txtSHSNNumber = new System.Windows.Forms.TextBox();
             this.txtSPacking = new System.Windows.Forms.TextBox();
             this.txtSPurchaseRate = new System.Windows.Forms.TextBox();
@@ -46,8 +48,8 @@
             this.txtSProductName = new System.Windows.Forms.TextBox();
             this.lbl2DateOfBirth = new System.Windows.Forms.Label();
             this.lbl2Name = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnToShop = new System.Windows.Forms.Button();
+            this.btnToGodown = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtSProductNameSearch = new System.Windows.Forms.TextBox();
@@ -115,7 +117,7 @@
             this.mnuTab.Location = new System.Drawing.Point(19, 10);
             this.mnuTab.Name = "mnuTab";
             this.mnuTab.SelectedIndex = 0;
-            this.mnuTab.Size = new System.Drawing.Size(1035, 494);
+            this.mnuTab.Size = new System.Drawing.Size(1035, 519);
             this.mnuTab.TabIndex = 1;
             this.mnuTab.SelectedIndexChanged += new System.EventHandler(this.mnuTab_SelectedIndexChanged);
             // 
@@ -124,7 +126,7 @@
             this.tabStock.Controls.Add(this.dgCurrentStock);
             this.tabStock.Location = new System.Drawing.Point(4, 24);
             this.tabStock.Name = "tabStock";
-            this.tabStock.Size = new System.Drawing.Size(1027, 466);
+            this.tabStock.Size = new System.Drawing.Size(1027, 491);
             this.tabStock.TabIndex = 2;
             this.tabStock.Text = "Products";
             this.tabStock.UseVisualStyleBackColor = true;
@@ -133,12 +135,14 @@
             // 
             this.dgCurrentStock.Location = new System.Drawing.Point(0, 0);
             this.dgCurrentStock.Name = "dgCurrentStock";
-            this.dgCurrentStock.Size = new System.Drawing.Size(1024, 463);
+            this.dgCurrentStock.Size = new System.Drawing.Size(1024, 488);
             this.dgCurrentStock.TabIndex = 0;
             // 
             // tabSearchManage
             // 
             this.tabSearchManage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tabSearchManage.Controls.Add(this.btnSDelete);
+            this.tabSearchManage.Controls.Add(this.btnSUpdate);
             this.tabSearchManage.Controls.Add(this.txtSHSNNumber);
             this.tabSearchManage.Controls.Add(this.txtSPacking);
             this.tabSearchManage.Controls.Add(this.txtSPurchaseRate);
@@ -153,16 +157,36 @@
             this.tabSearchManage.Controls.Add(this.txtSProductName);
             this.tabSearchManage.Controls.Add(this.lbl2DateOfBirth);
             this.tabSearchManage.Controls.Add(this.lbl2Name);
-            this.tabSearchManage.Controls.Add(this.btnUpdate);
-            this.tabSearchManage.Controls.Add(this.btnDelete);
+            this.tabSearchManage.Controls.Add(this.btnToShop);
+            this.tabSearchManage.Controls.Add(this.btnToGodown);
             this.tabSearchManage.Controls.Add(this.tabControl1);
             this.tabSearchManage.Controls.Add(this.dgvSearchGridview);
             this.tabSearchManage.Location = new System.Drawing.Point(4, 24);
             this.tabSearchManage.Name = "tabSearchManage";
             this.tabSearchManage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearchManage.Size = new System.Drawing.Size(1027, 466);
+            this.tabSearchManage.Size = new System.Drawing.Size(1027, 491);
             this.tabSearchManage.TabIndex = 1;
             this.tabSearchManage.Text = "Search / Update Stocks";
+            // 
+            // btnSDelete
+            // 
+            this.btnSDelete.Location = new System.Drawing.Point(874, 404);
+            this.btnSDelete.Name = "btnSDelete";
+            this.btnSDelete.Size = new System.Drawing.Size(103, 27);
+            this.btnSDelete.TabIndex = 47;
+            this.btnSDelete.Text = "Delete";
+            this.btnSDelete.UseVisualStyleBackColor = true;
+            this.btnSDelete.Click += new System.EventHandler(this.btnSDelete_Click);
+            // 
+            // btnSUpdate
+            // 
+            this.btnSUpdate.Location = new System.Drawing.Point(746, 404);
+            this.btnSUpdate.Name = "btnSUpdate";
+            this.btnSUpdate.Size = new System.Drawing.Size(97, 27);
+            this.btnSUpdate.TabIndex = 46;
+            this.btnSUpdate.Text = "Update";
+            this.btnSUpdate.UseVisualStyleBackColor = true;
+            this.btnSUpdate.Click += new System.EventHandler(this.btnSUpdate_Click);
             // 
             // txtSHSNNumber
             // 
@@ -289,23 +313,25 @@
             this.lbl2Name.TabIndex = 21;
             this.lbl2Name.Text = "Product Name";
             // 
-            // btnUpdate
+            // btnToShop
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(736, 406);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(119, 27);
-            this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Send To Shop";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnToShop.Location = new System.Drawing.Point(746, 449);
+            this.btnToShop.Name = "btnToShop";
+            this.btnToShop.Size = new System.Drawing.Size(97, 27);
+            this.btnToShop.TabIndex = 10;
+            this.btnToShop.Text = "Send To Shop";
+            this.btnToShop.UseVisualStyleBackColor = true;
+            this.btnToShop.Click += new System.EventHandler(this.btnToShop_Click);
             // 
-            // btnDelete
+            // btnToGodown
             // 
-            this.btnDelete.Location = new System.Drawing.Point(880, 406);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(119, 27);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Add To Godown";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnToGodown.Location = new System.Drawing.Point(874, 449);
+            this.btnToGodown.Name = "btnToGodown";
+            this.btnToGodown.Size = new System.Drawing.Size(103, 27);
+            this.btnToGodown.TabIndex = 9;
+            this.btnToGodown.Text = "Add To Godown";
+            this.btnToGodown.UseVisualStyleBackColor = true;
+            this.btnToGodown.Click += new System.EventHandler(this.btnToGodown_Click);
             // 
             // tabControl1
             // 
@@ -409,7 +435,7 @@
             // 
             this.dgvSearchGridview.Location = new System.Drawing.Point(6, 118);
             this.dgvSearchGridview.Name = "dgvSearchGridview";
-            this.dgvSearchGridview.Size = new System.Drawing.Size(711, 315);
+            this.dgvSearchGridview.Size = new System.Drawing.Size(711, 358);
             this.dgvSearchGridview.TabIndex = 45;
             this.dgvSearchGridview.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSearchGridview_CellFormatting);
             this.dgvSearchGridview.SelectionChanged += new System.EventHandler(this.dgvSearchGridview_SelectionChanged);
@@ -423,7 +449,7 @@
             this.tabRegistration.Location = new System.Drawing.Point(4, 24);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistration.Size = new System.Drawing.Size(1027, 466);
+            this.tabRegistration.Size = new System.Drawing.Size(1027, 491);
             this.tabRegistration.TabIndex = 0;
             this.tabRegistration.Text = "Add Product";
             // 
@@ -710,7 +736,7 @@
             this.tabViewSummary.Location = new System.Drawing.Point(4, 24);
             this.tabViewSummary.Name = "tabViewSummary";
             this.tabViewSummary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabViewSummary.Size = new System.Drawing.Size(1027, 466);
+            this.tabViewSummary.Size = new System.Drawing.Size(1027, 491);
             this.tabViewSummary.TabIndex = 3;
             this.tabViewSummary.Text = "View Reminders";
             this.tabViewSummary.UseVisualStyleBackColor = true;
@@ -746,12 +772,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 515);
+            this.ClientSize = new System.Drawing.Size(1072, 541);
             this.Controls.Add(this.mnuTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lucky Hardware";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.mnuTab.ResumeLayout(false);
             this.tabStock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).EndInit();
@@ -804,8 +831,8 @@
         private System.Windows.Forms.TextBox txtSProductName;
         private System.Windows.Forms.Label lbl2DateOfBirth;
         private System.Windows.Forms.Label lbl2Name;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnToShop;
+        private System.Windows.Forms.Button btnToGodown;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnRefresh;
@@ -837,6 +864,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.DataGridView dgvReminderGrid;
+        private System.Windows.Forms.Button btnSUpdate;
+        private System.Windows.Forms.Button btnSDelete;
     }
 }
 

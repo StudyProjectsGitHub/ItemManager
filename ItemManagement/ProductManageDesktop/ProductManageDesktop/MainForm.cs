@@ -1,4 +1,6 @@
-﻿using ProductManageDataLayer.Entities;
+﻿// Its a Test Project use should be for Study purpose only 
+//Author :  Mohnish Lokhande
+using ProductManageDataLayer.Entities;
 using ProductManageDataLayer.Service;
 using ProductManageDataLayer.Service.Interface;
 using ProductManageDesktop.Properties;
@@ -24,20 +26,22 @@ namespace ProductManageDesktop
         private string errorMessage;
 
         private IProductMasterService productMasterService;
+        private IProductHistoryService productHistoryService;
 
         /// <summary>
         /// Member id
         /// </summary>
         private int productId;
+        private bool IsAdd = false;
         #endregion
 
         public MainForm()
         {
             InitializeComponent();
             this.productMasterService = new ProductMasterService();
+            this.productHistoryService = new ProductHistoryService();
             this.InitilizeDataGridViewStyle(dgCurrentStock);
         }
-
 
         private void InitilizeDataGridViewStyle(DataGridView dgv)
         {
@@ -91,6 +95,47 @@ namespace ProductManageDesktop
             if (txtSellingRate.Text.Trim() != string.Empty && txtPurchaseRate.Text.Trim() != string.Empty)
             {
                 if (Convert.ToDecimal(txtSellingRate.Text.Trim()) < Convert.ToDecimal(txtPurchaseRate.Text.Trim()))
+                {
+                    this.AddErrorMessage("Seling Rate Can't be Less then Purchase rate");
+                }
+            }
+
+
+            return this.errorMessage != string.Empty ? false : true;
+        }
+
+        private bool ValidateUpdate()
+        {
+            this.errorMessage = string.Empty;
+
+            if (txtSProductName.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please Add Product Name");
+            }
+
+            if (txtSQuantity.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please enter the Quantity Taken");
+            }
+
+            if (txtSPurchaseRate.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please enter the  Purchase Rate");
+            }
+
+            if (txtSSellingRate.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please enter the  Selling  Rate");
+            }
+
+            if (txtSReminderAfter.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please enter the  Reminder  After");
+            }
+
+            if (txtSSellingRate.Text.Trim() != string.Empty && txtSPurchaseRate.Text.Trim() != string.Empty)
+            {
+                if (Convert.ToDecimal(txtSSellingRate.Text.Trim()) < Convert.ToDecimal(txtSPurchaseRate.Text.Trim()))
                 {
                     this.AddErrorMessage("Seling Rate Can't be Less then Purchase rate");
                 }
@@ -184,8 +229,6 @@ namespace ProductManageDesktop
             }
         }
 
-   
-
         /// <summary>
         /// Method to show general error message on any system level exception
         /// </summary>
@@ -202,7 +245,7 @@ namespace ProductManageDesktop
         /// Interface of ClubMemberService
         /// </summary>
 
-        
+       
         private void mnuTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -247,8 +290,6 @@ namespace ProductManageDesktop
             data.Columns[10].ColumnName = "Date Added";
             data.Columns[11].ColumnName = "Date Last Updated";
 
-            
-        
 
             // Data grid view column setting   
             InitilizeDataGridViewStyle(grdView);
@@ -258,8 +299,8 @@ namespace ProductManageDesktop
             grdView.Columns["ID"].Visible = false;
             grdView.Columns["ProductHistory"].Visible = false;
             grdView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-           
 
+            EnableDisableActions(false);
         }
 
         #region Key Press
@@ -315,9 +356,7 @@ namespace ProductManageDesktop
         }
         #endregion
 
-
         #region Search Form 
-
 
         private void dgvSearchGridview_SelectionChanged(object sender, EventArgs e)
         {
@@ -332,11 +371,12 @@ namespace ProductManageDesktop
                     DataRow dataRow = this.productMasterService.GetById(productId);
                     txtSProductName.Text = dataRow["Name"].ToString();
                     txtSHSNNumber.Text = dataRow["HSN"].ToString();
-                    txtSPacking.Text = dataRow["Packing"].ToString()==null ? string.Empty : dataRow["Packing"].ToString();
+                    txtSPacking.Text = dataRow["Packing"].ToString() == null ? string.Empty : dataRow["Packing"].ToString();
                     txtSQuantity.Text = dataRow["Quantity"].ToString() == null ? "0" : dataRow["Quantity"].ToString();
                     txtSPurchaseRate.Text = dataRow["Purchase_Rate"].ToString() == null ? "0.0" : dataRow["Purchase_Rate"].ToString();
                     txtSSellingRate.Text = dataRow["Sell_Rate"].ToString() == null ? "0.0" : dataRow["Sell_Rate"].ToString();
                     txtSReminderAfter.Text = dataRow["Reminder"].ToString() == null ? "0" : dataRow["Reminder"].ToString();
+                    EnableDisableActions(true);
                 }
             }
             catch (Exception ex)
@@ -411,8 +451,119 @@ namespace ProductManageDesktop
             this.LoadDataGridView(data, dgvSearchGridview);
             ResetSearchPage();
         }
-        #endregion
 
+        /// <summary>
+        /// Send the Quantity to the shop from godown
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnToShop_Click(object sender, EventArgs e)
+        {
+            IsAdd = false;
+
+            DialogResult dialogResult = MessageBox.Show("You opt to take " + "  " + txtSQuantity.Text.Trim() + " " + "units of Quantity to the Shop from Godown! \n Are you sure !", "Are you Sure!", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Validate the Quantity 
+                if (validateQuantity(IsAdd))
+                {
+                    UpdateMasterRecord(IsAdd);
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Function Adds Data to the Godown or Stock
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnToGodown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IsAdd = true;
+                DialogResult dialogResult = MessageBox.Show("You opt to add " + "  " + txtSQuantity.Text.Trim() + " " + "units of Quantity to the Godown! \n Are you sure !", "Are you Sure!", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Validate the Quantity 
+                    if (validateQuantity(IsAdd))
+                    {
+                        UpdateMasterRecord(IsAdd);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void UpdateMasterRecord(bool isAdd)
+        {
+            try
+            {
+                ProductMaster productMasterUpdate = this.productMasterService.GetByIdForEdit(this.productId);
+                bool success = false;
+                string sentTo = string.Empty;
+                if (productMasterUpdate != null)
+                {
+                    if (isAdd)
+                    {
+                        //added to godown
+                        sentTo = "Godown";
+                        productMasterUpdate.Quantity = productMasterUpdate.Quantity + Convert.ToInt32(txtSQuantity.Text.Trim());
+                        success = this.productMasterService.Update(productMasterUpdate);
+                    }
+                    else
+                    {
+                        // Add to shop delete from godown
+                        sentTo = "Shop";
+                        productMasterUpdate.Quantity = (productMasterUpdate.Quantity - Convert.ToInt32(txtSQuantity.Text.Trim()));
+                        success = this.productMasterService.Update(productMasterUpdate);
+                    }
+
+                    // Update the History Table
+                    ProductHistory p = new ProductHistory();
+                    p.SentTo = sentTo;
+                    p.ProductID = productId;
+                    p.Updated_Quantity = Convert.ToInt32(txtSQuantity.Text.Trim());
+                    p.Date_Modified = System.DateTime.Now;
+                    productHistoryService.Create(p);
+                }
+
+                if (success)
+                {
+                    MessageBox.Show(
+                         "Database Updated Successfully, with new modified Quantity for the product!!",
+                         "Database Updated",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Information);
+                }
+                //
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private bool validateQuantity(bool flag)
+        {
+            try
+            {
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message != string.Empty ? false : true;
+            }
+        }
 
 
         private void dgvSearchGridview_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -423,13 +574,28 @@ namespace ProductManageDesktop
                 if (dgv.SelectedRows.Count > 0)
                 {
                     string id = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                    int cellId = 0;
-                    if (int.TryParse(id, out cellId) && cellId > 0)
+                    int prodId = 0;
+                    if (int.TryParse(id, out prodId) && prodId > 0)
                     {
-                        Summary summary = new Summary();
-                        summary.productId = cellId;
-                        summary.ShowDialog(this);
-                        summary.Dispose();
+                        // if Records are not found show dailog no records found else show the summary form
+                        var productSummary = this.productHistoryService.GetAllSummaryByProductId(this.productId);
+
+                        if (productSummary != null && productSummary.Rows.Count > 0)
+                        {
+                            Summary summary = new Summary();
+                            summary.summaryData = productSummary;
+                            summary.productId = prodId;
+                            summary.LoadSummary();
+                            summary.ShowDialog(this);
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                           "No Summary Information was found for the Product!!",
+                           "No History",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Information);
+                        }
 
                     }
 
@@ -440,6 +606,82 @@ namespace ProductManageDesktop
                 this.ShowErrorMessage(ex);
             }
         }
+
+        private void btnSUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ValidateUpdate())
+                {
+                    ProductMaster productMasterUpdate = this.productMasterService.GetByIdForEdit(this.productId);
+
+                    if (productMasterUpdate != null)
+                    {
+                        productMasterUpdate.Name = txtSProductName.Text.Trim();
+                        productMasterUpdate.HSN = txtSHSNNumber.Text.Trim();
+                        productMasterUpdate.Packing = txtSPacking.Text.Trim();
+                        productMasterUpdate.Quantity = Convert.ToInt32(txtSQuantity.Text.Trim());
+                        productMasterUpdate.Purchase_Rate = Convert.ToDecimal(txtSPurchaseRate.Text.Trim());
+                        productMasterUpdate.Sell_Rate = Convert.ToDecimal(txtSSellingRate.Text.Trim());
+                        productMasterUpdate.Reminder = Convert.ToInt32(txtSReminderAfter.Text.Trim());
+
+                    }
+                    var flag = this.productMasterService.Update(productMasterUpdate);
+
+                    if (flag)
+                    {
+                        DataTable data = this.productMasterService.GetAll();
+                        this.LoadDataGridView(data, dgvSearchGridview);
+                        ResetSearchPage();
+
+                        MessageBox.Show(
+                            Resources.Update_Successful_Message,
+                            Resources.Update_Successful_Message_Title,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(
+                        this.errorMessage,
+                        Resources.Registration_Error_Message_Title,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void btnSDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var flag = this.productMasterService.Delete(this.productId);
+
+                if (flag)
+                {
+                    DataTable data = this.productMasterService.GetAll();
+                    this.LoadDataGridView(data, dgvSearchGridview);
+
+                    MessageBox.Show(
+                        Resources.Delete_Successful_Message,
+                        Resources.Delete_Successful_Message_Title,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        #endregion
 
 
         #region Reset Section
@@ -468,7 +710,7 @@ namespace ProductManageDesktop
         private void ResetSearchPage()
         {
             txtSProductName.Text = string.Empty;
-            txtSHSNNumber.Text =string.Empty;
+            txtSHSNNumber.Text = string.Empty;
             txtSPacking.Text = string.Empty;
             txtSQuantity.Text = string.Empty;
             txtSPurchaseRate.Text = string.Empty;
@@ -477,6 +719,20 @@ namespace ProductManageDesktop
             txtSProductNameSearch.Text = string.Empty;
         }
 
+        private void EnableDisableActions(bool flag)
+        {
+            btnSDelete.Enabled = flag;
+            btnSUpdate.Enabled = flag;
+            btnToShop.Enabled = flag;
+            btnToGodown.Enabled = flag;
+        }
+
+
         #endregion
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

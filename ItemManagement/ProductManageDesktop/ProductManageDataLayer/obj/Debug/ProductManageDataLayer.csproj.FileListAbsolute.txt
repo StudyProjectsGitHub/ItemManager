@@ -7,16 +7,6 @@ F:\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFr
 F:\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.SqlServer.xml
 F:\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.dll
 F:\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.pdb
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.dll.config
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.pdb
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.SqlServer.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.xml
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.SqlServer.xml
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.csprojResolveAssemblyReference.cache
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.dll
-D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.pdb
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.dll.config
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.dll
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.pdb
@@ -27,3 +17,13 @@ F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageData
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.csprojResolveAssemblyReference.cache
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.dll
 F:\ItemManager\ItemManager\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.dll.config
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.csprojResolveAssemblyReference.cache

@@ -57,5 +57,12 @@ namespace ProductManageDataLayer.Service.Interface
         /// <param name="operand">AND OR operand</param>
         /// <returns>Data table</returns>
         DataTable Search(DateTime startDate, DateTime endDate, string pName);
+
+        /// <summary>
+        /// Get By Id For Edit
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        ProductMaster GetByIdForEdit(int id);
     }
 }

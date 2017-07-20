@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvSummary = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSummary)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvSummary
+            // 
+            this.dgvSummary.Location = new System.Drawing.Point(7, 12);
+            this.dgvSummary.Name = "dgvSummary";
+            this.dgvSummary.Size = new System.Drawing.Size(850, 372);
+            this.dgvSummary.TabIndex = 46;
             // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 350);
+            this.ClientSize = new System.Drawing.Size(865, 390);
+            this.Controls.Add(this.dgvSummary);
             this.Name = "Summary";
             this.Text = "Summary";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSummary)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvSummary;
     }
 }

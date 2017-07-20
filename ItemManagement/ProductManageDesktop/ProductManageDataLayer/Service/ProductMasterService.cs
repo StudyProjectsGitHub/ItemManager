@@ -71,6 +71,23 @@ namespace ProductManageDataLayer.Service
             }
         }
 
+
+        /// <summary>
+        /// Service method to get club member by Id
+        /// </summary>
+        /// <param name="id">member id</param>
+        /// <returns>Data row</returns>
+        public ProductMaster GetByIdForEdit(int id)
+        {
+            using (var context = new ProductManagementDbContext())
+            {
+                ProductMaster product = context.Products
+                    .Where(i => i.ProductID == id)
+                    .SingleOrDefault();
+                return product;
+            }
+        }
+
         /// <summary>
         /// Service method to search records by multiple parameters
         /// </summary>
