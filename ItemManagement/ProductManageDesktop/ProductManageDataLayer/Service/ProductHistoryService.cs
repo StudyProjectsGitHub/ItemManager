@@ -42,5 +42,32 @@ namespace ProductManageDataLayer.Service
                 return lstProductSummarys.ToDataTable<ProductHistory>();
             }
         }
+
+        public bool DoesHistoryExists(int productId)
+        {
+            using (var context = new ProductManagementDbContext())
+            {
+                return context.ProductHistorys.Any(x => x.ProductID == productId);
+
+            }
+
+        }
+
+        /// <summary>
+        /// Method to delete a club member
+        /// </summary>
+        /// <param name="id">member id</param>
+        /// <returns>true / false</returns>
+        public bool Delete(int id)
+        {
+            using (var context = new ProductManagementDbContext())
+            {
+                var product = context.ProductHistorys.Where(x=>x.ProductID == id);
+                context.ProductHistorys.RemoveRange(product);
+                return context.SaveChanges() > 0;
+            }
+        }
+
+
     }
 }

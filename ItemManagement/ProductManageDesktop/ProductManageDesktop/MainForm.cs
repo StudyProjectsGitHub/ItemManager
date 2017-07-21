@@ -608,6 +608,14 @@ namespace ProductManageDesktop
         {
             try
             {
+
+                if (this.productHistoryService.DoesHistoryExists(this.productId))
+                {
+
+                    this.productHistoryService.Delete(this.productId);
+
+                }
+
                 var flag = this.productMasterService.Delete(this.productId);
 
                 if (flag)
@@ -620,7 +628,7 @@ namespace ProductManageDesktop
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
-
+        
             }
             catch (Exception ex)
             {

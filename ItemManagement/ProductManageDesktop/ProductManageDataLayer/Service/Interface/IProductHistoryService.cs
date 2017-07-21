@@ -24,5 +24,19 @@ namespace ProductManageDataLayer.Service.Interface
         /// <param name="productId"></param>
         /// <returns></returns>
         DataTable GetAllSummaryByProductId(int productId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        bool DoesHistoryExists(int productId);
+
+        /// <summary>
+        /// Method to delete a ProductHistory
+        /// </summary>
+        /// <param name="id">member id</param>
+        /// <returns>true / false</returns>
+        bool Delete(int id);
     }
 }
