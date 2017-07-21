@@ -347,7 +347,6 @@ namespace ProductManageDesktop
         private void dgvSearchGridview_SelectionChanged(object sender, EventArgs e)
         {
             DataGridView dgv = (DataGridView)sender;
-
             try
             {
                 if (dgv.SelectedRows.Count > 0)
@@ -362,6 +361,8 @@ namespace ProductManageDesktop
                     txtSPurchaseRate.Text = dataRow["Purchase_Rate"].ToString() == null ? "0.0" : dataRow["Purchase_Rate"].ToString();
                     txtSSellingRate.Text = dataRow["Sell_Rate"].ToString() == null ? "0.0" : dataRow["Sell_Rate"].ToString();
                     txtSReminderAfter.Text = dataRow["Reminder"].ToString() == null ? "0" : dataRow["Reminder"].ToString();
+                    txtSDescription.Text = dataRow["Description"].ToString() == null ? "" : dataRow["Description"].ToString();
+                    txtSDealer.Text = dataRow["DealerName"].ToString() == null ? "" : dataRow["DealerName"].ToString();
                     EnableDisableActions(true);
                 }
             }
@@ -569,6 +570,8 @@ namespace ProductManageDesktop
                         productMasterUpdate.Purchase_Rate = Convert.ToDecimal(txtSPurchaseRate.Text.Trim());
                         productMasterUpdate.Sell_Rate = Convert.ToDecimal(txtSSellingRate.Text.Trim());
                         productMasterUpdate.Reminder = Convert.ToInt32(txtSReminderAfter.Text.Trim());
+                        productMasterUpdate.Description = Convert.ToString(txtSDescription.Text.Trim());
+                        productMasterUpdate.DealerName = Convert.ToString(txtSDealer.Text.Trim());
 
                     }
                     var flag = this.productMasterService.Update(productMasterUpdate);
@@ -611,7 +614,6 @@ namespace ProductManageDesktop
                 {
                     DataTable data = this.productMasterService.GetAll();
                     this.LoadDataGridView(data, dgvSearchGridview);
-
                     MessageBox.Show(
                         Resources.Delete_Successful_Message,
                         Resources.Delete_Successful_Message_Title,
@@ -661,6 +663,8 @@ namespace ProductManageDesktop
             txtSSellingRate.Text = string.Empty;
             txtSReminderAfter.Text = string.Empty;
             txtSProductNameSearch.Text = string.Empty;
+            txtSDescription.Text = string.Empty;
+            txtSDealer.Text = string.Empty;
         }
 
         private void EnableDisableActions(bool flag)
@@ -683,7 +687,7 @@ namespace ProductManageDesktop
         {
             foreach (DataGridViewRow row in dgCurrentStock.Rows)
             {
-                if (Convert.ToInt32(row.Cells["Reminder"].Value) >=  Convert.ToInt32(row.Cells["Quantity"].Value))
+                if (Convert.ToInt32(row.Cells["Reminder"].Value) >= Convert.ToInt32(row.Cells["Quantity"].Value))
                 {
                     row.DefaultCellStyle.BackColor = Color.Red;
                 }

@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.mnuTab = new System.Windows.Forms.TabControl();
-            this.tabStock = new System.Windows.Forms.TabPage();
-            this.dgCurrentStock = new System.Windows.Forms.DataGridView();
             this.tabSearchManage = new System.Windows.Forms.TabPage();
+            this.txtSDealer = new System.Windows.Forms.TextBox();
+            this.lblDealer = new System.Windows.Forms.Label();
+            this.txtSDescription = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSDelete = new System.Windows.Forms.Button();
             this.btnSUpdate = new System.Windows.Forms.Button();
             this.txtSHSNNumber = new System.Windows.Forms.TextBox();
@@ -57,6 +59,8 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvSearchGridview = new System.Windows.Forms.DataGridView();
+            this.tabStock = new System.Windows.Forms.TabPage();
+            this.dgCurrentStock = new System.Windows.Forms.DataGridView();
             this.tabRegistration = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabRegister = new System.Windows.Forms.TabPage();
@@ -89,12 +93,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvReminderGrid = new System.Windows.Forms.DataGridView();
             this.mnuTab.SuspendLayout();
-            this.tabStock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).BeginInit();
             this.tabSearchManage.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchGridview)).BeginInit();
+            this.tabStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).BeginInit();
             this.tabRegistration.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabRegister.SuspendLayout();
@@ -113,31 +117,17 @@
             this.mnuTab.Location = new System.Drawing.Point(19, 10);
             this.mnuTab.Name = "mnuTab";
             this.mnuTab.SelectedIndex = 0;
-            this.mnuTab.Size = new System.Drawing.Size(1035, 519);
+            this.mnuTab.Size = new System.Drawing.Size(1035, 580);
             this.mnuTab.TabIndex = 1;
             this.mnuTab.SelectedIndexChanged += new System.EventHandler(this.mnuTab_SelectedIndexChanged);
-            // 
-            // tabStock
-            // 
-            this.tabStock.Controls.Add(this.dgCurrentStock);
-            this.tabStock.Location = new System.Drawing.Point(4, 24);
-            this.tabStock.Name = "tabStock";
-            this.tabStock.Size = new System.Drawing.Size(1027, 491);
-            this.tabStock.TabIndex = 2;
-            this.tabStock.Text = "Products";
-            this.tabStock.UseVisualStyleBackColor = true;
-            // 
-            // dgCurrentStock
-            // 
-            this.dgCurrentStock.Location = new System.Drawing.Point(0, 0);
-            this.dgCurrentStock.Name = "dgCurrentStock";
-            this.dgCurrentStock.Size = new System.Drawing.Size(1024, 488);
-            this.dgCurrentStock.TabIndex = 0;
-            this.dgCurrentStock.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgCurrentStock_CellFormatting);
             // 
             // tabSearchManage
             // 
             this.tabSearchManage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tabSearchManage.Controls.Add(this.txtSDealer);
+            this.tabSearchManage.Controls.Add(this.lblDealer);
+            this.tabSearchManage.Controls.Add(this.txtSDescription);
+            this.tabSearchManage.Controls.Add(this.label1);
             this.tabSearchManage.Controls.Add(this.btnSDelete);
             this.tabSearchManage.Controls.Add(this.btnSUpdate);
             this.tabSearchManage.Controls.Add(this.txtSHSNNumber);
@@ -161,13 +151,49 @@
             this.tabSearchManage.Location = new System.Drawing.Point(4, 24);
             this.tabSearchManage.Name = "tabSearchManage";
             this.tabSearchManage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearchManage.Size = new System.Drawing.Size(1027, 491);
+            this.tabSearchManage.Size = new System.Drawing.Size(1027, 552);
             this.tabSearchManage.TabIndex = 1;
             this.tabSearchManage.Text = "Search / Update Stocks";
             // 
+            // txtSDealer
+            // 
+            this.txtSDealer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDealer.Location = new System.Drawing.Point(847, 423);
+            this.txtSDealer.MaxLength = 12;
+            this.txtSDealer.Name = "txtSDealer";
+            this.txtSDealer.Size = new System.Drawing.Size(149, 21);
+            this.txtSDealer.TabIndex = 48;
+            // 
+            // lblDealer
+            // 
+            this.lblDealer.AutoSize = true;
+            this.lblDealer.Location = new System.Drawing.Point(727, 429);
+            this.lblDealer.Name = "lblDealer";
+            this.lblDealer.Size = new System.Drawing.Size(44, 15);
+            this.lblDealer.TabIndex = 49;
+            this.lblDealer.Text = "Dealer";
+            // 
+            // txtSDescription
+            // 
+            this.txtSDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSDescription.Location = new System.Drawing.Point(847, 386);
+            this.txtSDescription.MaxLength = 12;
+            this.txtSDescription.Name = "txtSDescription";
+            this.txtSDescription.Size = new System.Drawing.Size(149, 21);
+            this.txtSDescription.TabIndex = 46;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(727, 392);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 15);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Description";
+            // 
             // btnSDelete
             // 
-            this.btnSDelete.Location = new System.Drawing.Point(874, 404);
+            this.btnSDelete.Location = new System.Drawing.Point(881, 469);
             this.btnSDelete.Name = "btnSDelete";
             this.btnSDelete.Size = new System.Drawing.Size(103, 27);
             this.btnSDelete.TabIndex = 13;
@@ -177,7 +203,7 @@
             // 
             // btnSUpdate
             // 
-            this.btnSUpdate.Location = new System.Drawing.Point(746, 404);
+            this.btnSUpdate.Location = new System.Drawing.Point(753, 469);
             this.btnSUpdate.Name = "btnSUpdate";
             this.btnSUpdate.Size = new System.Drawing.Size(97, 27);
             this.btnSUpdate.TabIndex = 12;
@@ -312,7 +338,7 @@
             // 
             // btnToShop
             // 
-            this.btnToShop.Location = new System.Drawing.Point(746, 449);
+            this.btnToShop.Location = new System.Drawing.Point(753, 514);
             this.btnToShop.Name = "btnToShop";
             this.btnToShop.Size = new System.Drawing.Size(97, 27);
             this.btnToShop.TabIndex = 14;
@@ -322,7 +348,7 @@
             // 
             // btnToGodown
             // 
-            this.btnToGodown.Location = new System.Drawing.Point(874, 449);
+            this.btnToGodown.Location = new System.Drawing.Point(881, 514);
             this.btnToGodown.Name = "btnToGodown";
             this.btnToGodown.Size = new System.Drawing.Size(103, 27);
             this.btnToGodown.TabIndex = 15;
@@ -396,11 +422,29 @@
             // 
             this.dgvSearchGridview.Location = new System.Drawing.Point(6, 118);
             this.dgvSearchGridview.Name = "dgvSearchGridview";
-            this.dgvSearchGridview.Size = new System.Drawing.Size(711, 358);
+            this.dgvSearchGridview.Size = new System.Drawing.Size(711, 428);
             this.dgvSearchGridview.TabIndex = 45;
             this.dgvSearchGridview.TabStop = false;
             this.dgvSearchGridview.SelectionChanged += new System.EventHandler(this.dgvSearchGridview_SelectionChanged);
             this.dgvSearchGridview.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvSearchGridview_MouseDoubleClick);
+            // 
+            // tabStock
+            // 
+            this.tabStock.Controls.Add(this.dgCurrentStock);
+            this.tabStock.Location = new System.Drawing.Point(4, 24);
+            this.tabStock.Name = "tabStock";
+            this.tabStock.Size = new System.Drawing.Size(1027, 552);
+            this.tabStock.TabIndex = 2;
+            this.tabStock.Text = "Products";
+            this.tabStock.UseVisualStyleBackColor = true;
+            // 
+            // dgCurrentStock
+            // 
+            this.dgCurrentStock.Location = new System.Drawing.Point(0, 0);
+            this.dgCurrentStock.Name = "dgCurrentStock";
+            this.dgCurrentStock.Size = new System.Drawing.Size(1024, 549);
+            this.dgCurrentStock.TabIndex = 0;
+            this.dgCurrentStock.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgCurrentStock_CellFormatting);
             // 
             // tabRegistration
             // 
@@ -410,7 +454,7 @@
             this.tabRegistration.Location = new System.Drawing.Point(4, 24);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistration.Size = new System.Drawing.Size(1027, 491);
+            this.tabRegistration.Size = new System.Drawing.Size(1027, 552);
             this.tabRegistration.TabIndex = 0;
             this.tabRegistration.Text = "Add Product";
             // 
@@ -697,7 +741,7 @@
             this.tabViewSummary.Location = new System.Drawing.Point(4, 24);
             this.tabViewSummary.Name = "tabViewSummary";
             this.tabViewSummary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabViewSummary.Size = new System.Drawing.Size(1027, 491);
+            this.tabViewSummary.Size = new System.Drawing.Size(1027, 552);
             this.tabViewSummary.TabIndex = 3;
             this.tabViewSummary.Text = "View Reminders";
             this.tabViewSummary.UseVisualStyleBackColor = true;
@@ -720,7 +764,7 @@
             this.panel1.Controls.Add(this.dgvReminderGrid);
             this.panel1.Location = new System.Drawing.Point(6, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 439);
+            this.panel1.Size = new System.Drawing.Size(1018, 525);
             this.panel1.TabIndex = 0;
             this.panel1.UseWaitCursor = true;
             // 
@@ -729,15 +773,16 @@
             this.dgvReminderGrid.Location = new System.Drawing.Point(3, 3);
             this.dgvReminderGrid.Name = "dgvReminderGrid";
             this.dgvReminderGrid.ReadOnly = true;
-            this.dgvReminderGrid.Size = new System.Drawing.Size(1008, 434);
+            this.dgvReminderGrid.Size = new System.Drawing.Size(1008, 515);
             this.dgvReminderGrid.TabIndex = 1;
             this.dgvReminderGrid.TabStop = false;
+            this.dgvReminderGrid.UseWaitCursor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 541);
+            this.ClientSize = new System.Drawing.Size(1072, 602);
             this.Controls.Add(this.mnuTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
@@ -745,14 +790,14 @@
             this.Text = "Lucky Hardware";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.mnuTab.ResumeLayout(false);
-            this.tabStock.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).EndInit();
             this.tabSearchManage.ResumeLayout(false);
             this.tabSearchManage.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchGridview)).EndInit();
+            this.tabStock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgCurrentStock)).EndInit();
             this.tabRegistration.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabRegister.ResumeLayout(false);
@@ -827,6 +872,10 @@
         private System.Windows.Forms.DataGridView dgvReminderGrid;
         private System.Windows.Forms.Button btnSUpdate;
         private System.Windows.Forms.Button btnSDelete;
+        private System.Windows.Forms.TextBox txtSDealer;
+        private System.Windows.Forms.Label lblDealer;
+        private System.Windows.Forms.TextBox txtSDescription;
+        private System.Windows.Forms.Label label1;
     }
 }
 
