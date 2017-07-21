@@ -121,7 +121,7 @@
     <value>Delete</value>
   </data>
   <data name="Delete_Successful_Message" xml:space="preserve">
-    <value>Member details deleted successfully</value>
+    <value>Product details deleted successfully</value>
   </data>
   <data name="Delete_Successful_Message_Title" xml:space="preserve">
     <value>Delete successfull</value>
@@ -226,7 +226,7 @@
     <value>Update error</value>
   </data>
   <data name="Update_Successful_Message" xml:space="preserve">
-    <value>Member details updated successfully</value>
+    <value>Product updated successfully</value>
   </data>
   <data name="Update_Successful_Message_Title" xml:space="preserve">
     <value>Update successfull</value>

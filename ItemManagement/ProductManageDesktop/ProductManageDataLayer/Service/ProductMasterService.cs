@@ -95,11 +95,11 @@ namespace ProductManageDataLayer.Service
         /// <param name="maritalStatus">marital status</param>
         /// <param name="operand">AND OR operand</param>
         /// <returns>Data table</returns>
-        public DataTable Search(DateTime startDate, DateTime endDate, string name)
+        public DataTable Search( string name)
         {
             using (var context = new ProductManagementDbContext())
             {
-                List<ProductMaster> members = context.Products.Where(i => i.Name.StartsWith(name) &&  (i.LastUpdated_Date > startDate || i.LastUpdated_Date < endDate)).ToList();
+                List<ProductMaster> members = context.Products.Where(i => i.Name.StartsWith(name)).ToList();
                 return members.ToDataTable<ProductMaster>();
             }
         }

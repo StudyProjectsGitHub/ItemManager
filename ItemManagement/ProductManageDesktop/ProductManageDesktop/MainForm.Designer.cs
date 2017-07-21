@@ -54,12 +54,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtSProductNameSearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtSToDate = new System.Windows.Forms.DateTimePicker();
-            this.dtSFromDate = new System.Windows.Forms.DateTimePicker();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvSearchGridview = new System.Windows.Forms.DataGridView();
             this.tabRegistration = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -174,7 +170,7 @@
             this.btnSDelete.Location = new System.Drawing.Point(874, 404);
             this.btnSDelete.Name = "btnSDelete";
             this.btnSDelete.Size = new System.Drawing.Size(103, 27);
-            this.btnSDelete.TabIndex = 47;
+            this.btnSDelete.TabIndex = 13;
             this.btnSDelete.Text = "Delete";
             this.btnSDelete.UseVisualStyleBackColor = true;
             this.btnSDelete.Click += new System.EventHandler(this.btnSDelete_Click);
@@ -184,7 +180,7 @@
             this.btnSUpdate.Location = new System.Drawing.Point(746, 404);
             this.btnSUpdate.Name = "btnSUpdate";
             this.btnSUpdate.Size = new System.Drawing.Size(97, 27);
-            this.btnSUpdate.TabIndex = 46;
+            this.btnSUpdate.TabIndex = 12;
             this.btnSUpdate.Text = "Update";
             this.btnSUpdate.UseVisualStyleBackColor = true;
             this.btnSUpdate.Click += new System.EventHandler(this.btnSUpdate_Click);
@@ -196,7 +192,7 @@
             this.txtSHSNNumber.MaxLength = 12;
             this.txtSHSNNumber.Name = "txtSHSNNumber";
             this.txtSHSNNumber.Size = new System.Drawing.Size(152, 21);
-            this.txtSHSNNumber.TabIndex = 44;
+            this.txtSHSNNumber.TabIndex = 6;
             // 
             // txtSPacking
             // 
@@ -205,7 +201,7 @@
             this.txtSPacking.MaxLength = 12;
             this.txtSPacking.Name = "txtSPacking";
             this.txtSPacking.Size = new System.Drawing.Size(152, 21);
-            this.txtSPacking.TabIndex = 43;
+            this.txtSPacking.TabIndex = 7;
             // 
             // txtSPurchaseRate
             // 
@@ -214,7 +210,7 @@
             this.txtSPurchaseRate.MaxLength = 12;
             this.txtSPurchaseRate.Name = "txtSPurchaseRate";
             this.txtSPurchaseRate.Size = new System.Drawing.Size(152, 21);
-            this.txtSPurchaseRate.TabIndex = 42;
+            this.txtSPurchaseRate.TabIndex = 9;
             // 
             // txtSSellingRate
             // 
@@ -223,7 +219,7 @@
             this.txtSSellingRate.MaxLength = 12;
             this.txtSSellingRate.Name = "txtSSellingRate";
             this.txtSSellingRate.Size = new System.Drawing.Size(152, 21);
-            this.txtSSellingRate.TabIndex = 41;
+            this.txtSSellingRate.TabIndex = 10;
             // 
             // txtSReminderAfter
             // 
@@ -232,7 +228,7 @@
             this.txtSReminderAfter.MaxLength = 12;
             this.txtSReminderAfter.Name = "txtSReminderAfter";
             this.txtSReminderAfter.Size = new System.Drawing.Size(149, 21);
-            this.txtSReminderAfter.TabIndex = 40;
+            this.txtSReminderAfter.TabIndex = 11;
             // 
             // lbl2NoOfChildren
             // 
@@ -277,7 +273,7 @@
             this.txtSQuantity.MaxLength = 12;
             this.txtSQuantity.Name = "txtSQuantity";
             this.txtSQuantity.Size = new System.Drawing.Size(152, 21);
-            this.txtSQuantity.TabIndex = 26;
+            this.txtSQuantity.TabIndex = 8;
             // 
             // lbl2Occupation
             // 
@@ -294,7 +290,7 @@
             this.txtSProductName.Location = new System.Drawing.Point(843, 138);
             this.txtSProductName.Name = "txtSProductName";
             this.txtSProductName.Size = new System.Drawing.Size(152, 21);
-            this.txtSProductName.TabIndex = 23;
+            this.txtSProductName.TabIndex = 5;
             // 
             // lbl2DateOfBirth
             // 
@@ -319,7 +315,7 @@
             this.btnToShop.Location = new System.Drawing.Point(746, 449);
             this.btnToShop.Name = "btnToShop";
             this.btnToShop.Size = new System.Drawing.Size(97, 27);
-            this.btnToShop.TabIndex = 10;
+            this.btnToShop.TabIndex = 14;
             this.btnToShop.Text = "Send To Shop";
             this.btnToShop.UseVisualStyleBackColor = true;
             this.btnToShop.Click += new System.EventHandler(this.btnToShop_Click);
@@ -329,7 +325,7 @@
             this.btnToGodown.Location = new System.Drawing.Point(874, 449);
             this.btnToGodown.Name = "btnToGodown";
             this.btnToGodown.Size = new System.Drawing.Size(103, 27);
-            this.btnToGodown.TabIndex = 9;
+            this.btnToGodown.TabIndex = 15;
             this.btnToGodown.Text = "Add To Godown";
             this.btnToGodown.UseVisualStyleBackColor = true;
             this.btnToGodown.Click += new System.EventHandler(this.btnToGodown_Click);
@@ -347,12 +343,8 @@
             // 
             this.tabPage3.Controls.Add(this.txtSProductNameSearch);
             this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.dtSToDate);
-            this.tabPage3.Controls.Add(this.dtSFromDate);
             this.tabPage3.Controls.Add(this.btnRefresh);
             this.tabPage3.Controls.Add(this.btnSearch);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -364,43 +356,29 @@
             // txtSProductNameSearch
             // 
             this.txtSProductNameSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSProductNameSearch.Location = new System.Drawing.Point(352, 35);
+            this.txtSProductNameSearch.Location = new System.Drawing.Point(17, 35);
             this.txtSProductNameSearch.MaxLength = 12;
             this.txtSProductNameSearch.Name = "txtSProductNameSearch";
-            this.txtSProductNameSearch.Size = new System.Drawing.Size(114, 21);
-            this.txtSProductNameSearch.TabIndex = 27;
-            this.txtSProductNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSProductNameSearch_KeyPress);
+            this.txtSProductNameSearch.Size = new System.Drawing.Size(181, 21);
+            this.txtSProductNameSearch.TabIndex = 1;
+            this.txtSProductNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSProductNameSearch_KeyUp);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(349, 11);
+            this.label8.Location = new System.Drawing.Point(19, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 15);
             this.label8.TabIndex = 12;
             this.label8.Text = "Product Name";
-            // 
-            // dtSToDate
-            // 
-            this.dtSToDate.Location = new System.Drawing.Point(193, 35);
-            this.dtSToDate.Name = "dtSToDate";
-            this.dtSToDate.Size = new System.Drawing.Size(143, 21);
-            this.dtSToDate.TabIndex = 11;
-            // 
-            // dtSFromDate
-            // 
-            this.dtSFromDate.Location = new System.Drawing.Point(32, 35);
-            this.dtSFromDate.Name = "dtSFromDate";
-            this.dtSFromDate.Size = new System.Drawing.Size(143, 21);
-            this.dtSFromDate.TabIndex = 10;
             // 
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(859, 28);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 28);
-            this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -409,28 +387,10 @@
             this.btnSearch.Location = new System.Drawing.Point(744, 28);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(190, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "To Date";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "From Date";
             // 
             // dgvSearchGridview
             // 
@@ -438,6 +398,7 @@
             this.dgvSearchGridview.Name = "dgvSearchGridview";
             this.dgvSearchGridview.Size = new System.Drawing.Size(711, 358);
             this.dgvSearchGridview.TabIndex = 45;
+            this.dgvSearchGridview.TabStop = false;
             this.dgvSearchGridview.SelectionChanged += new System.EventHandler(this.dgvSearchGridview_SelectionChanged);
             this.dgvSearchGridview.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvSearchGridview_MouseDoubleClick);
             // 
@@ -505,7 +466,7 @@
             this.txtHsnNumber.MaxLength = 12;
             this.txtHsnNumber.Name = "txtHsnNumber";
             this.txtHsnNumber.Size = new System.Drawing.Size(152, 21);
-            this.txtHsnNumber.TabIndex = 32;
+            this.txtHsnNumber.TabIndex = 3;
             // 
             // txtPacking
             // 
@@ -514,7 +475,7 @@
             this.txtPacking.MaxLength = 12;
             this.txtPacking.Name = "txtPacking";
             this.txtPacking.Size = new System.Drawing.Size(152, 21);
-            this.txtPacking.TabIndex = 31;
+            this.txtPacking.TabIndex = 5;
             // 
             // txtReminderAfter
             // 
@@ -523,7 +484,7 @@
             this.txtReminderAfter.MaxLength = 5;
             this.txtReminderAfter.Name = "txtReminderAfter";
             this.txtReminderAfter.Size = new System.Drawing.Size(152, 21);
-            this.txtReminderAfter.TabIndex = 30;
+            this.txtReminderAfter.TabIndex = 8;
             this.txtReminderAfter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReminderAfter_KeyPress);
             // 
             // txtProductDescription
@@ -533,7 +494,7 @@
             this.txtProductDescription.MaxLength = 50;
             this.txtProductDescription.Name = "txtProductDescription";
             this.txtProductDescription.Size = new System.Drawing.Size(152, 21);
-            this.txtProductDescription.TabIndex = 29;
+            this.txtProductDescription.TabIndex = 2;
             // 
             // txtPurchaseRate
             // 
@@ -542,7 +503,7 @@
             this.txtPurchaseRate.MaxLength = 12;
             this.txtPurchaseRate.Name = "txtPurchaseRate";
             this.txtPurchaseRate.Size = new System.Drawing.Size(152, 21);
-            this.txtPurchaseRate.TabIndex = 28;
+            this.txtPurchaseRate.TabIndex = 4;
             this.txtPurchaseRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPurchaseRate_KeyPress);
             // 
             // txtDealerName
@@ -552,7 +513,7 @@
             this.txtDealerName.MaxLength = 40;
             this.txtDealerName.Name = "txtDealerName";
             this.txtDealerName.Size = new System.Drawing.Size(152, 21);
-            this.txtDealerName.TabIndex = 27;
+            this.txtDealerName.TabIndex = 9;
             // 
             // txtSellingRate
             // 
@@ -561,7 +522,7 @@
             this.txtSellingRate.MaxLength = 12;
             this.txtSellingRate.Name = "txtSellingRate";
             this.txtSellingRate.Size = new System.Drawing.Size(152, 21);
-            this.txtSellingRate.TabIndex = 26;
+            this.txtSellingRate.TabIndex = 6;
             this.txtSellingRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSellingRate_KeyPress);
             // 
             // label7
@@ -662,7 +623,7 @@
             this.txtQuantity.MaxLength = 12;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(152, 21);
-            this.txtQuantity.TabIndex = 5;
+            this.txtQuantity.TabIndex = 7;
             this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // lblHealthStatus
@@ -680,8 +641,8 @@
             this.btnAdd.Location = new System.Drawing.Point(383, 195);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 28);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -709,7 +670,7 @@
             this.txtProductName.Location = new System.Drawing.Point(174, 13);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(152, 21);
-            this.txtProductName.TabIndex = 2;
+            this.txtProductName.TabIndex = 1;
             // 
             // lblDateOfBirth
             // 
@@ -751,6 +712,7 @@
             this.lblHeader.Size = new System.Drawing.Size(243, 15);
             this.lblHeader.TabIndex = 6;
             this.lblHeader.Text = "Stocks Need to Be Updated Soon!!!!!!";
+            this.lblHeader.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -760,13 +722,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 439);
             this.panel1.TabIndex = 0;
+            this.panel1.UseWaitCursor = true;
             // 
             // dgvReminderGrid
             // 
             this.dgvReminderGrid.Location = new System.Drawing.Point(3, 3);
             this.dgvReminderGrid.Name = "dgvReminderGrid";
+            this.dgvReminderGrid.ReadOnly = true;
             this.dgvReminderGrid.Size = new System.Drawing.Size(1008, 434);
             this.dgvReminderGrid.TabIndex = 1;
+            this.dgvReminderGrid.TabStop = false;
             // 
             // MainForm
             // 
@@ -837,8 +802,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvSearchGridview;
         private System.Windows.Forms.TabPage tabStock;
         private System.Windows.Forms.DataGridView dgCurrentStock;
@@ -851,8 +814,6 @@
         private System.Windows.Forms.TextBox txtPurchaseRate;
         private System.Windows.Forms.TextBox txtDealerName;
         private System.Windows.Forms.TextBox txtSellingRate;
-        private System.Windows.Forms.DateTimePicker dtSFromDate;
-        private System.Windows.Forms.DateTimePicker dtSToDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSProductNameSearch;
         private System.Windows.Forms.TextBox txtSHSNNumber;

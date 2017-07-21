@@ -36,14 +36,14 @@
             // 
             this.dgvSummary.Location = new System.Drawing.Point(7, 12);
             this.dgvSummary.Name = "dgvSummary";
-            this.dgvSummary.Size = new System.Drawing.Size(850, 372);
+            this.dgvSummary.Size = new System.Drawing.Size(384, 284);
             this.dgvSummary.TabIndex = 46;
             // 
             // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 390);
+            this.ClientSize = new System.Drawing.Size(399, 302);
             this.Controls.Add(this.dgvSummary);
             this.Name = "Summary";
             this.Text = "Summary";

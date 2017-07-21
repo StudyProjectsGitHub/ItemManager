@@ -15,3 +15,7 @@ D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductMana
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.csproj.GenerateResource.Cache
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.exe
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\obj\Release\ProductManageDesktop.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\MahApps.Metro.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\System.Windows.Interactivity.dll
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\MahApps.Metro.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDesktop\bin\Release\MahApps.Metro.xml

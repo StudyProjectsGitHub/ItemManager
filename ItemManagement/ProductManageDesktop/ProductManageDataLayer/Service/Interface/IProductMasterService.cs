@@ -56,7 +56,7 @@ namespace ProductManageDataLayer.Service.Interface
         /// <param name="maritalStatus">marital status</param>
         /// <param name="operand">AND OR operand</param>
         /// <returns>Data table</returns>
-        DataTable Search(DateTime startDate, DateTime endDate, string pName);
+        DataTable Search( string pName);
 
         /// <summary>
         /// Get By Id For Edit

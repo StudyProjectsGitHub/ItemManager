@@ -43,6 +43,12 @@ namespace ProductManageDesktop
             this.InitilizeDataGridViewStyle(dgCurrentStock);
         }
 
+        #region Common Methods  
+
+        /// <summary>
+        /// Grid Styling
+        /// </summary>
+        /// <param name="dgv"></param>
         private void InitilizeDataGridViewStyle(DataGridView dgv)
         {
             // Setting the style of the DataGridView control
@@ -58,6 +64,64 @@ namespace ProductManageDesktop
             dgv.AllowUserToAddRows = false;
             dgv.ReadOnly = true;
         }
+
+        /// <summary>
+        /// Method to show general error message on any system level exception
+        /// </summary>
+        private void ShowErrorMessage(Exception ex)
+        {
+            MessageBox.Show(
+                ex.Message,
+                //Resources.System_Error_Message, 
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+
+        /// <summary>
+        /// To generate the error message
+        /// </summary>
+        /// <param name="error">error message</param>
+        private void AddErrorMessage(string error)
+        {
+            if (this.errorMessage == string.Empty)
+            {
+                this.errorMessage = Resources.Error_Message_Header + "\n\n";
+            }
+
+            this.errorMessage += error + "\n";
+        }
+
+        /// <summary>
+        /// Method to load data grid view
+        /// </summary>
+        /// <param name="data">data table</param>
+        private void LoadDataGridView(DataTable data, DataGridView grdView)
+        {
+            // change datatable column name
+            data.Columns[0].ColumnName = "ID";
+            data.Columns[1].ColumnName = "Product Name";
+            data.Columns[4].ColumnName = "Purchase Rate #";
+            data.Columns[6].ColumnName = "Sell Rate #";
+            data.Columns[9].ColumnName = "Dealer";
+            data.Columns[10].ColumnName = "Date Added";
+            data.Columns[11].ColumnName = "Date Last Updated";
+
+
+            // Data grid view column setting   
+            InitilizeDataGridViewStyle(grdView);
+            grdView.DataSource = data;
+            grdView.DataMember = data.TableName;
+            // Hide Columns
+            grdView.Columns["ID"].Visible = false;
+            grdView.Columns["ProductHistory"].Visible = false;
+            grdView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            EnableDisableActions(false);
+        }
+        #endregion
+
+        #region Validation
 
         /// <summary>
         /// Validates registration input
@@ -104,6 +168,10 @@ namespace ProductManageDesktop
             return this.errorMessage != string.Empty ? false : true;
         }
 
+        /// <summary>
+        /// Validate Update
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateUpdate()
         {
             this.errorMessage = string.Empty;
@@ -145,19 +213,9 @@ namespace ProductManageDesktop
             return this.errorMessage != string.Empty ? false : true;
         }
 
-        /// <summary>
-        /// To generate the error message
-        /// </summary>
-        /// <param name="error">error message</param>
-        private void AddErrorMessage(string error)
-        {
-            if (this.errorMessage == string.Empty)
-            {
-                this.errorMessage = Resources.Error_Message_Header + "\n\n";
-            }
+        #endregion
 
-            this.errorMessage += error + "\n";
-        }
+        #region Add Product
 
         /// <summary>
         /// Add product to the database
@@ -229,79 +287,7 @@ namespace ProductManageDesktop
             }
         }
 
-        /// <summary>
-        /// Method to show general error message on any system level exception
-        /// </summary>
-        private void ShowErrorMessage(Exception ex)
-        {
-            MessageBox.Show(
-                ex.Message,
-                //Resources.System_Error_Message, 
-                "Validation Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-        }
-        /// <summary>
-        /// Interface of ClubMemberService
-        /// </summary>
-
-       
-        private void mnuTab_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (mnuTab.SelectedIndex == 0)
-                {
-                    DataTable data = this.productMasterService.GetAll();
-                    this.LoadDataGridView(data, dgCurrentStock);
-                }
-                // Searh grid View
-                if (mnuTab.SelectedIndex == 1)
-                {
-                    DataTable data = this.productMasterService.GetAll();
-                    this.LoadDataGridView(data, dgvSearchGridview);
-                }
-
-                // Searh grid View
-                if (mnuTab.SelectedIndex == 3)
-                {
-                    DataTable data = this.productMasterService.GetAllReminders();
-                    this.LoadDataGridView(data, dgvReminderGrid);
-                }
-            }
-            catch (Exception ex)
-            {
-                this.ShowErrorMessage(ex);
-            }
-        }
-
-        /// <summary>
-        /// Method to load data grid view
-        /// </summary>
-        /// <param name="data">data table</param>
-        private void LoadDataGridView(DataTable data, DataGridView grdView)
-        {
-            // change datatable column name
-            data.Columns[0].ColumnName = "ID";
-            data.Columns[1].ColumnName = "Product Name";
-            data.Columns[4].ColumnName = "Purchase Rate #";
-            data.Columns[6].ColumnName = "Sell Rate #";
-            data.Columns[9].ColumnName = "Dealer";
-            data.Columns[10].ColumnName = "Date Added";
-            data.Columns[11].ColumnName = "Date Last Updated";
-
-
-            // Data grid view column setting   
-            InitilizeDataGridViewStyle(grdView);
-            grdView.DataSource = data;
-            grdView.DataMember = data.TableName;
-            // Hide Columns
-            grdView.Columns["ID"].Visible = false;
-            grdView.Columns["ProductHistory"].Visible = false;
-            grdView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-            EnableDisableActions(false);
-        }
+        #endregion
 
         #region Key Press
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
@@ -390,16 +376,7 @@ namespace ProductManageDesktop
         {
             try
             {
-                DateTime dtStartDate = DateTime.MinValue;
-                DateTime dtFromDate = dtSFromDate.Value;
-
-                if (dtSFromDate.Value.Date != System.DateTime.Today.Date)
-                {
-                    dtStartDate = dtSFromDate.Value;
-                }
-
-
-                DataTable data = this.productMasterService.Search(dtStartDate, dtFromDate, txtSProductNameSearch.Text);
+                DataTable data = this.productMasterService.Search(txtSProductNameSearch.Text.Trim());
                 this.LoadDataGridView(data, dgvSearchGridview);
             }
             catch (Exception ex)
@@ -408,27 +385,6 @@ namespace ProductManageDesktop
             }
         }
 
-        private void txtSProductNameSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                DateTime dtStartDate = DateTime.MinValue;
-                DateTime dtFromDate = dtSFromDate.Value;
-
-                if (dtSFromDate.Value.Date != System.DateTime.Today.Date)
-                {
-                    dtStartDate = dtSFromDate.Value;
-                }
-
-                DataTable data = this.productMasterService.Search(dtStartDate, dtFromDate, txtSProductNameSearch.Text);
-
-                this.LoadDataGridView(data, dgvSearchGridview);
-            }
-            catch (Exception ex)
-            {
-                this.ShowErrorMessage(ex);
-            }
-        }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -672,7 +628,6 @@ namespace ProductManageDesktop
 
         #endregion
 
-
         #region Reset Section
 
         /// <summary>
@@ -733,6 +688,53 @@ namespace ProductManageDesktop
                     row.DefaultCellStyle.BackColor = Color.Red;
                 }
 
+            }
+        }
+
+        private void txtSProductNameSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                DataTable data = this.productMasterService.Search(txtSProductNameSearch.Text.Trim());
+                this.LoadDataGridView(data, dgvSearchGridview);
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        /// <summary>
+        /// Selected Index Changed of Menu Tab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnuTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (mnuTab.SelectedIndex == 0)
+                {
+                    DataTable data = this.productMasterService.GetAll();
+                    this.LoadDataGridView(data, dgCurrentStock);
+                }
+                // Searh grid View
+                if (mnuTab.SelectedIndex == 1)
+                {
+                    DataTable data = this.productMasterService.GetAll();
+                    this.LoadDataGridView(data, dgvSearchGridview);
+                }
+
+                // Searh grid View
+                if (mnuTab.SelectedIndex == 3)
+                {
+                    DataTable data = this.productMasterService.GetAllReminders();
+                    this.LoadDataGridView(data, dgvReminderGrid);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
             }
         }
     }

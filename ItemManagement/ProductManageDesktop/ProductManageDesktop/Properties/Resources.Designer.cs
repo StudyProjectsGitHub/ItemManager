@@ -70,7 +70,7 @@ namespace ProductManageDesktop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member details deleted successfully.
+        ///   Looks up a localized string similar to Product details deleted successfully.
         /// </summary>
         internal static string Delete_Successful_Message {
             get {
@@ -385,7 +385,7 @@ namespace ProductManageDesktop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Member details updated successfully.
+        ///   Looks up a localized string similar to Product updated successfully.
         /// </summary>
         internal static string Update_Successful_Message {
             get {
