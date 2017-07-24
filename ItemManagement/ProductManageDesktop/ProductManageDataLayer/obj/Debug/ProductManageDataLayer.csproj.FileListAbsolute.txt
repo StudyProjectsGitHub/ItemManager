@@ -26,3 +26,4 @@ D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductMana
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Debug\EntityFramework.SqlServer.xml
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.dll
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.pdb
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Debug\ProductManageDataLayer.csprojResolveAssemblyReference.cache

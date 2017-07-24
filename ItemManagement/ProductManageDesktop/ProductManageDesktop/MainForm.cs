@@ -536,7 +536,9 @@ namespace ProductManageDesktop
                     p.SentTo = sentTo;
                     p.ProductID = productId;
                     p.Updated_Quantity = Convert.ToInt32(txtSQuantity.Text.Trim());
-                    p.Date_Modified = System.DateTime.Now;
+                    p.Date_Added = System.DateTime.Now;
+                    p.Note = "";
+                    p.Date_Edited = System.DateTime.Now;
                     productHistoryService.Create(p);
                 }
 

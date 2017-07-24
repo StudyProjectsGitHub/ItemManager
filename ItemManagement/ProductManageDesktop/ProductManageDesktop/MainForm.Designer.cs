@@ -586,7 +586,7 @@
             this.textBox3.MaxLength = 40;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(152, 21);
-            this.textBox3.TabIndex = 26;
+            this.textBox3.TabIndex = 10;
             // 
             // label4
             // 
@@ -779,7 +779,7 @@
             this.btnAdd.Location = new System.Drawing.Point(383, 195);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 28);
-            this.btnAdd.TabIndex = 10;
+            this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
