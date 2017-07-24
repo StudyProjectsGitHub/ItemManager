@@ -18,7 +18,9 @@ namespace ProductManageDesktop
     {
         public int productId { get; set; }
         public int productHistoryId { get; set; }
+
         private IProductHistoryService productHistoryService;
+        private IProductMasterService productMasterService;
         public DataTable summaryData { get; set; }
 
         private string errorMessage;
@@ -29,6 +31,7 @@ namespace ProductManageDesktop
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.productHistoryService = new ProductHistoryService();
+            this.productMasterService = new ProductMasterService();
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.TopMost = true;
@@ -128,6 +131,14 @@ namespace ProductManageDesktop
         {
             btnDelete.Enabled = flag;
             btnUpdate.Enabled = flag;
+           
+        }
+
+        private void ResetValues()
+        {
+            txtSummaryQuantity.Text = string.Empty;
+            txtNote.Text = string.Empty;
+            txtSentTo.Text = string.Empty;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -137,13 +148,30 @@ namespace ProductManageDesktop
                 if (this.ValidateUpdate())
                 {
                     ProductHistory productHistoryUpdate = this.productHistoryService.GetByIdForEdit(this.productHistoryId);
+                    ProductMaster productMasterUpdate = this.productMasterService.GetByIdForEdit(this.productId);
 
                     if (productHistoryUpdate != null)
                     {
                         // Buisness Logic of Updation Remaining here 
                         productHistoryUpdate.Note = txtNote.Text.Trim();
-                        productHistoryUpdate.Updated_Quantity = Convert.ToInt32(txtSummaryQuantity.Text.Trim());
 
+                        if (productHistoryUpdate.SentTo.Contains("Godown"))
+                        {
+                            if(productHistoryUpdate.Updated_Quantity < Convert.ToInt32(txtSummaryQuantity.Text.Trim())) // the quantity is updated less , so we have to add more in the stock
+                                productMasterUpdate.Quantity = productMasterUpdate.Quantity + (Convert.ToInt32(txtSummaryQuantity.Text.Trim()) - productHistoryUpdate.Updated_Quantity);
+                            else
+                                productMasterUpdate.Quantity = productMasterUpdate.Quantity - (productHistoryUpdate.Updated_Quantity - Convert.ToInt32(txtSummaryQuantity.Text.Trim()));
+                        }
+                        else
+                        {
+                            if (productHistoryUpdate.Updated_Quantity < Convert.ToInt32(txtSummaryQuantity.Text.Trim())) // the quantity is updated Less , Case 1:  we have sent more items to shop
+                                productMasterUpdate.Quantity = productMasterUpdate.Quantity - (Convert.ToInt32(txtSummaryQuantity.Text.Trim()) - productHistoryUpdate.Updated_Quantity);
+                            else
+                                productMasterUpdate.Quantity = productMasterUpdate.Quantity +  (productHistoryUpdate.Updated_Quantity - Convert.ToInt32(txtSummaryQuantity.Text.Trim())); //  Case 1:  we have sent less items to shop
+                        }
+
+                        productHistoryUpdate.Updated_Quantity = Convert.ToInt32(txtSummaryQuantity.Text.Trim());
+                        this.productMasterService.Update(productMasterUpdate);
                     }
                     var flag = this.productHistoryService.Update(productHistoryUpdate);
 
@@ -151,8 +179,9 @@ namespace ProductManageDesktop
                     {
                         DataTable data = this.productHistoryService.GetAllSummaryByProductId(this.productId);
                         this.LoadDataGridView(data, dgvSummary);
-
-                            MessageBox.Show(
+                        this.EnableDisableActions(false);
+                        ResetValues();
+                         MessageBox.Show(
                             Resources.Update_Successful_Message,
                             Resources.Update_Successful_Message_Title,
                             MessageBoxButtons.OK,
@@ -213,6 +242,8 @@ namespace ProductManageDesktop
                 {
                     DataTable data = this.productHistoryService.GetAllSummaryByProductId(this.productId);
                     this.LoadDataGridView(data, dgvSummary);
+                    this.EnableDisableActions(false);
+                    ResetValues();
                     MessageBox.Show(
                         Resources.Delete_Successful_Message,
                         Resources.Delete_Successful_Message_Title,
@@ -224,6 +255,14 @@ namespace ProductManageDesktop
             catch (Exception ex)
             {
                 this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void txtSummaryQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

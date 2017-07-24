@@ -55,7 +55,7 @@
             this.txtNote.MaxLength = 150;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(652, 20);
-            this.txtNote.TabIndex = 58;
+            this.txtNote.TabIndex = 6;
             // 
             // lblBrand
             // 
@@ -71,7 +71,7 @@
             this.btnDelete.Location = new System.Drawing.Point(378, 493);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(103, 27);
-            this.btnDelete.TabIndex = 55;
+            this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -81,7 +81,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(258, 493);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(97, 27);
-            this.btnUpdate.TabIndex = 54;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -94,7 +94,7 @@
             this.txtSentTo.Name = "txtSentTo";
             this.txtSentTo.ReadOnly = true;
             this.txtSentTo.Size = new System.Drawing.Size(152, 20);
-            this.txtSentTo.TabIndex = 52;
+            this.txtSentTo.TabIndex = 2;
             // 
             // txtSummaryQuantity
             // 
@@ -103,7 +103,8 @@
             this.txtSummaryQuantity.MaxLength = 12;
             this.txtSummaryQuantity.Name = "txtSummaryQuantity";
             this.txtSummaryQuantity.Size = new System.Drawing.Size(149, 20);
-            this.txtSummaryQuantity.TabIndex = 53;
+            this.txtSummaryQuantity.TabIndex = 4;
+            this.txtSummaryQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSummaryQuantity_KeyPress);
             // 
             // lbl2NoOfChildren
             // 
