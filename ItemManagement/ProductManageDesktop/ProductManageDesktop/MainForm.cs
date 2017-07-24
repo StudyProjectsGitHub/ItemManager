@@ -101,11 +101,13 @@ namespace ProductManageDesktop
             // change datatable column name
             data.Columns[0].ColumnName = "ID";
             data.Columns[1].ColumnName = "Product Name";
-            data.Columns[4].ColumnName = "Purchase Rate #";
+            data.Columns[2].ColumnName = "Brand Name";
+            data.Columns[3].ColumnName = "Size";
+            data.Columns[5].ColumnName = "Purchase Rate #";
             data.Columns[6].ColumnName = "Sell Rate #";
-            data.Columns[9].ColumnName = "Dealer";
-            data.Columns[10].ColumnName = "Date Added";
-            data.Columns[11].ColumnName = "Date Last Updated";
+            data.Columns[10].ColumnName = "Dealer";
+            data.Columns[11].ColumnName = "Date Added";
+            data.Columns[12].ColumnName = "Date Last Updated";
 
 
             // Data grid view column setting   
@@ -154,6 +156,16 @@ namespace ProductManageDesktop
             if (txtReminderAfter.Text.Trim() == string.Empty)
             {
                 this.AddErrorMessage("Please enter the  Reminder  After");
+            }
+
+            if (txtProductBrand.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please enter the  brand Name.");
+            }
+
+            if (txtSize.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage("Please enter the Size");
             }
 
             if (txtSellingRate.Text.Trim() != string.Empty && txtPurchaseRate.Text.Trim() != string.Empty)
@@ -233,14 +245,15 @@ namespace ProductManageDesktop
                     ProductMaster productModel = new ProductMaster()
                     {
                         Name = txtProductName.Text.Trim(),
-                        Description = txtProductDescription.Text.Trim(),
+                        BrandName = txtProductBrand.Text.Trim(),
+                        Size = txtSize.Text.Trim(),
                         HSN = txtHsnNumber.Text.Trim(),
                         Purchase_Rate = Convert.ToDecimal((txtPurchaseRate.Text.Trim())),
                         Packing = txtPacking.Text.Trim(),
                         Sell_Rate = Convert.ToDecimal((txtSellingRate.Text.Trim())),
                         Quantity = Convert.ToInt32(txtQuantity.Text.Trim()),
                         Reminder = Convert.ToInt32(txtReminderAfter.Text.Trim()),
-                        DealerName = txtDealerName.Text.Trim(),
+                        DealerName = txtSize.Text.Trim(),
                         Purchase_Date = System.DateTime.Now,
                         LastUpdated_Date = System.DateTime.Now
                     };
@@ -340,6 +353,51 @@ namespace ProductManageDesktop
                 e.Handled = true;
             }
         }
+
+
+        private void txtSQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSReminderAfter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSSellingRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSPurchaseRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
         #endregion
 
         #region Search Form 
@@ -361,8 +419,9 @@ namespace ProductManageDesktop
                     txtSPurchaseRate.Text = dataRow["Purchase_Rate"].ToString() == null ? "0.0" : dataRow["Purchase_Rate"].ToString();
                     txtSSellingRate.Text = dataRow["Sell_Rate"].ToString() == null ? "0.0" : dataRow["Sell_Rate"].ToString();
                     txtSReminderAfter.Text = dataRow["Reminder"].ToString() == null ? "0" : dataRow["Reminder"].ToString();
-                    txtSDescription.Text = dataRow["Description"].ToString() == null ? "" : dataRow["Description"].ToString();
+                    txtSBrandName.Text = dataRow["BrandName"].ToString() == null ? "" : dataRow["BrandName"].ToString();
                     txtSDealer.Text = dataRow["DealerName"].ToString() == null ? "" : dataRow["DealerName"].ToString();
+                    txtSSize.Text = dataRow["Size"].ToString() == null ? "" : dataRow["Size"].ToString();
                     EnableDisableActions(true);
                 }
             }
@@ -377,8 +436,11 @@ namespace ProductManageDesktop
         {
             try
             {
-                DataTable data = this.productMasterService.Search(txtSProductNameSearch.Text.Trim());
-                this.LoadDataGridView(data, dgvSearchGridview);
+                if (txtSizeSearch.Text.Trim() != string.Empty && txtSProductNameSearch.Text.Trim() != string.Empty && txtBrandSearch.Text.Trim() != string.Empty)
+                {
+                    DataTable data = this.productMasterService.Search(txtSProductNameSearch.Text.Trim(), txtBrandSearch.Text.Trim(), txtSizeSearch.Text.Trim());
+                    this.LoadDataGridView(data, dgvSearchGridview);
+                }
             }
             catch (Exception ex)
             {
@@ -570,7 +632,8 @@ namespace ProductManageDesktop
                         productMasterUpdate.Purchase_Rate = Convert.ToDecimal(txtSPurchaseRate.Text.Trim());
                         productMasterUpdate.Sell_Rate = Convert.ToDecimal(txtSSellingRate.Text.Trim());
                         productMasterUpdate.Reminder = Convert.ToInt32(txtSReminderAfter.Text.Trim());
-                        productMasterUpdate.Description = Convert.ToString(txtSDescription.Text.Trim());
+                        productMasterUpdate.BrandName = Convert.ToString(txtSBrandName.Text.Trim());
+                        productMasterUpdate.Size = Convert.ToString(txtSSize.Text.Trim());
                         productMasterUpdate.DealerName = Convert.ToString(txtSDealer.Text.Trim());
 
                     }
@@ -646,14 +709,14 @@ namespace ProductManageDesktop
         private void ResetProductRegistration()
         {
             txtProductName.Text = string.Empty;
-            txtProductDescription.Text = string.Empty;
+            txtProductBrand.Text = string.Empty;
             txtHsnNumber.Text = string.Empty;
             txtPurchaseRate.Text = string.Empty;
             txtPacking.Text = string.Empty;
             txtSellingRate.Text = string.Empty;
             txtQuantity.Text = string.Empty;
             txtReminderAfter.Text = string.Empty;
-            txtDealerName.Text = string.Empty;
+            txtSize.Text = string.Empty;
 
         }
 
@@ -671,8 +734,11 @@ namespace ProductManageDesktop
             txtSSellingRate.Text = string.Empty;
             txtSReminderAfter.Text = string.Empty;
             txtSProductNameSearch.Text = string.Empty;
-            txtSDescription.Text = string.Empty;
+            txtSBrandName.Text = string.Empty;
+            txtSSize.Text = string.Empty;
             txtSDealer.Text = string.Empty;
+            txtBrandSearch.Text = string.Empty;
+            txtSizeSearch.Text = string.Empty;
         }
 
         private void EnableDisableActions(bool flag)
@@ -686,11 +752,63 @@ namespace ProductManageDesktop
 
         #endregion
 
+        #region Searching functionality
+
+        private void txtSProductNameSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                SearchProduct();
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void txtBrandSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                SearchProduct();
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void txtSizeSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                SearchProduct();
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        public void SearchProduct()
+        {
+            try
+            {
+                DataTable data = this.productMasterService.Search(txtSProductNameSearch.Text.Trim(), txtBrandSearch.Text.Trim(), txtSizeSearch.Text.Trim());
+                this.LoadDataGridView(data, dgvSearchGridview);
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+
+        }
+        #endregion
+
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void dgCurrentStock_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             foreach (DataGridViewRow row in dgCurrentStock.Rows)
@@ -700,19 +818,6 @@ namespace ProductManageDesktop
                     row.DefaultCellStyle.BackColor = Color.Red;
                 }
 
-            }
-        }
-
-        private void txtSProductNameSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                DataTable data = this.productMasterService.Search(txtSProductNameSearch.Text.Trim());
-                this.LoadDataGridView(data, dgvSearchGridview);
-            }
-            catch (Exception ex)
-            {
-                this.ShowErrorMessage(ex);
             }
         }
 
@@ -749,5 +854,6 @@ namespace ProductManageDesktop
                 this.ShowErrorMessage(ex);
             }
         }
+
     }
 }

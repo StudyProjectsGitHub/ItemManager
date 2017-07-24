@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProductManageDataLayer.Service.Interface
 {
-    public interface IProductMasterService 
+    public interface IProductMasterService
     {
         /// <summary>
         /// Service method to create ProductMaster
@@ -50,13 +50,13 @@ namespace ProductManageDataLayer.Service.Interface
         DataRow GetById(int Id);
 
         /// <summary>
-        /// Service method to search records by multiple parameters
+        /// Search Product
         /// </summary>
-        /// <param name="occupation">occupation value</param>
-        /// <param name="maritalStatus">marital status</param>
-        /// <param name="operand">AND OR operand</param>
-        /// <returns>Data table</returns>
-        DataTable Search( string pName);
+        /// <param name="pName"></param>
+        /// <param name="pBrand"></param>
+        /// <param name="pSize"></param>
+        /// <returns></returns>
+        DataTable Search(string pName, string pBrand, string pSize);
 
         /// <summary>
         /// Get By Id For Edit

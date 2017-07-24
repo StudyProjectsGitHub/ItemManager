@@ -15,13 +15,16 @@ namespace ProductManageDataLayer.Initializer
     {
         protected override void Seed(ProductManagementDbContext context)
         {
-            //var clubMembers = new List<ClubMember>{
-            //    new ClubMember { Id=5, Name = "Pete Darson"},
-            //   new ClubMember { Id=6,  Name = "Pete Darson"},
-            //    new ClubMember { Id=7,  Name = "Pete Darson"},
+            //var dummy = new List<ProductMaster>{
+            //    new ProductMaster { ProductID=1, Name = "Test"},
+              
             //};
 
-            //clubMembers.ForEach(category => context.ClubMembers.Add(category));
+            //Products.ForEach(x => context.Products.Add(dummy));
+
+            base.Seed(context);
         }
     }
+
+    
 }

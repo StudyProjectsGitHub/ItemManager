@@ -17,6 +17,7 @@ namespace ProductManageDataLayer.Context
             : base("ItemDatabase.DbConnection")
         {
             Database.SetInitializer<ProductManagementDbContext>(new ItemManagementInitializer());
+            Database.SetInitializer<ProductManagementDbContext>(new DropCreateDatabaseIfModelChanges<ProductManagementDbContext>());
             Configuration.ProxyCreationEnabled = false;
         }
 
@@ -33,7 +34,6 @@ namespace ProductManageDataLayer.Context
 
             modelBuilder.Entity<ClubMember>().HasKey<int>(l => l.Id);
             modelBuilder.Entity<ProductMaster>().HasKey<int>(l => l.ProductID);
-
             //one-to-many 
             //configure one-to-many
             modelBuilder.Entity<ProductHistory>()
