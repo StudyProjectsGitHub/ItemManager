@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProductManageDataLayer.Context
 {
@@ -16,9 +17,9 @@ namespace ProductManageDataLayer.Context
         public ProductManagementDbContext()
             : base("ItemDatabase.DbConnection")
         {
-            Database.SetInitializer<ProductManagementDbContext>(new ItemManagementInitializer());
-            Database.SetInitializer<ProductManagementDbContext>(new DropCreateDatabaseIfModelChanges<ProductManagementDbContext>());
-            Configuration.ProxyCreationEnabled = false;
+           Database.SetInitializer<ProductManagementDbContext>(new ItemManagementInitializer());
+           Database.SetInitializer<ProductManagementDbContext>(new DropCreateDatabaseIfModelChanges<ProductManagementDbContext>());
+           Configuration.ProxyCreationEnabled = false;
         }
 
 
@@ -30,17 +31,22 @@ namespace ProductManageDataLayer.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            try
+            {
+                base.OnModelCreating(modelBuilder);
+                modelBuilder.Entity<ClubMember>().HasKey<int>(l => l.Id);
+                modelBuilder.Entity<ProductMaster>().HasKey<int>(l => l.ProductID);
+                //one-to-many 
+                //configure one-to-many
+                modelBuilder.Entity<ProductHistory>()
+                             .HasRequired<ProductMaster>(s => s.Products) // Student entity requires Standard 
+                             .WithMany(s => s.ProductHistory).WillCascadeOnDelete(false); // Standard entity includes many Students entities
 
-            modelBuilder.Entity<ClubMember>().HasKey<int>(l => l.Id);
-            modelBuilder.Entity<ProductMaster>().HasKey<int>(l => l.ProductID);
-            //one-to-many 
-            //configure one-to-many
-            modelBuilder.Entity<ProductHistory>()
-                         .HasRequired<ProductMaster>(s => s.Products) // Student entity requires Standard 
-                         .WithMany(s => s.ProductHistory).WillCascadeOnDelete(false); // Standard entity includes many Students entities
-
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

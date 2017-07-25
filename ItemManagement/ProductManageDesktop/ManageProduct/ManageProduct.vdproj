@@ -22,7 +22,7 @@
         "Entry"
         {
         "MsmKey" = "8:_09BAC808806B129BEE05ABE89BBD7586"
-        "OwnerKey" = "8:_713BB492167F4498CD0E5C9475B671F4"
+        "OwnerKey" = "8:_7F39F4E28A4961498B5F84E973B57D56"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -33,14 +33,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_713BB492167F4498CD0E5C9475B671F4"
-        "OwnerKey" = "8:_79081E550E184910A136BA66DD8B7C7D"
+        "MsmKey" = "8:_10DD66F0E81A4E3281D04870EBDD38D6"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_79081E550E184910A136BA66DD8B7C7D"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7F39F4E28A4961498B5F84E973B57D56"
+        "OwnerKey" = "8:_79081E550E184910A136BA66DD8B7C7D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,6 +69,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DFE80D68A460434580197116F189A05B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E4B14AB340EA1AEF8363209044CEA876"
         "OwnerKey" = "8:_B4C1111BD790E8F4AC9637A5978609E5"
         "MsmSig" = "8:_UNDEFINED"
@@ -76,19 +88,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A5849BD90DBF774411FE294D469DAD92"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_79081E550E184910A136BA66DD8B7C7D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_713BB492167F4498CD0E5C9475B671F4"
+        "OwnerKey" = "8:_7F39F4E28A4961498B5F84E973B57D56"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -115,6 +121,12 @@
         "OwnerKey" = "8:_09BAC808806B129BEE05ABE89BBD7586"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A5849BD90DBF774411FE294D469DAD92"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -133,6 +145,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -225,14 +253,34 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_713BB492167F4498CD0E5C9475B671F4"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10DD66F0E81A4E3281D04870EBDD38D6"
+            {
+            "SourcePath" = "8:C:\\Users\\Mohnishl\\Downloads\\if_gear-resize-arrows_532771.ico"
+            "TargetName" = "8:if_gear-resize-arrows_532771.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_009EA891FE2D4169811EF6611A5AC600"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7F39F4E28A4961498B5F84E973B57D56"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ProductManageDataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_713BB492167F4498CD0E5C9475B671F4"
+                    "_7F39F4E28A4961498B5F84E973B57D56"
                     {
                     "Name" = "8:ProductManageDataLayer.dll"
                     "Attributes" = "3:512"
@@ -349,6 +397,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DFE80D68A460434580197116F189A05B"
+            {
+            "SourcePath" = "8:C:\\Users\\Mohnishl\\Downloads\\if_gear-resize-arrows_532771.ico"
+            "TargetName" = "8:if_gear-resize-arrows_532771.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_3F558E019282475397429CC3A812E461"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E4B14AB340EA1AEF8363209044CEA876"
             {
             "AssemblyRegister" = "3:1"
@@ -437,7 +505,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ManageProduct"
         "ProductCode" = "8:{601333BC-A8AF-48D5-BB2A-87EB749DD55A}"
-        "PackageCode" = "8:{056E60ED-DCE3-43C4-A776-AB8207ADDDBC}"
+        "PackageCode" = "8:{EA7A932E-1FF3-480B-A567-E5A39E8276E4}"
         "UpgradeCode" = "8:{05A2C45F-E74F-446A-B33B-6157E92968D0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -557,6 +625,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5D20A98F93D84834B61D3777A5EBAC0C"
+            {
+            "Name" = "8:Product Manager"
+            "Arguments" = "8:"
+            "Description" = "8:Manage Products in Godown"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3F558E019282475397429CC3A812E461"
+            "Folder" = "8:_3F558E019282475397429CC3A812E461"
+            "WorkingFolder" = "8:_3F558E019282475397429CC3A812E461"
+            "Icon" = "8:_DFE80D68A460434580197116F189A05B"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F108F03FC4104700BDD1D8D6B343F684"
+            {
+            "Name" = "8:Manage Godown"
+            "Arguments" = "8:"
+            "Description" = "8:Manage Godown Stocks"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_009EA891FE2D4169811EF6611A5AC600"
+            "Folder" = "8:_009EA891FE2D4169811EF6611A5AC600"
+            "WorkingFolder" = "8:_009EA891FE2D4169811EF6611A5AC600"
+            "Icon" = "8:_10DD66F0E81A4E3281D04870EBDD38D6"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

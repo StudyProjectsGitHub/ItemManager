@@ -9,22 +9,20 @@ using System.Threading.Tasks;
 
 namespace ProductManageDataLayer.Initializer
 {
-   
+
 
     public class ItemManagementInitializer : CreateDatabaseIfNotExists<ProductManagementDbContext>
     {
         protected override void Seed(ProductManagementDbContext context)
         {
-            //var dummy = new List<ProductMaster>{
-            //    new ProductMaster { ProductID=1, Name = "Test"},
-              
-            //};
+            var clubMembers = new List<ClubMember>{
+                new ClubMember {Id=1, Name = "Pete Darson"},
+            };
 
-            //Products.ForEach(x => context.Products.Add(dummy));
-
+            clubMembers.ForEach(category => context.ClubMembers.Add(category));
             base.Seed(context);
         }
     }
 
-    
+
 }

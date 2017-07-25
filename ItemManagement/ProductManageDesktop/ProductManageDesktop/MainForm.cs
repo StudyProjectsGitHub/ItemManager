@@ -54,12 +54,14 @@ namespace ProductManageDesktop
             // Setting the style of the DataGridView control
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold, GraphicsUnit.Point);
             dgv.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.ControlDark;
-            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             dgv.DefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular, GraphicsUnit.Point);
             dgv.DefaultCellStyle.BackColor = Color.Empty;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Info;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+
             dgv.GridColor = SystemColors.ControlDarkDark;
             dgv.AllowUserToAddRows = false;
             dgv.ReadOnly = true;
