@@ -70,7 +70,7 @@
             this.tabRegistration = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabRegister = new System.Windows.Forms.TabPage();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDealerName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtHsnNumber = new System.Windows.Forms.TextBox();
             this.txtPacking = new System.Windows.Forms.TextBox();
@@ -544,7 +544,7 @@
             // 
             // tabRegister
             // 
-            this.tabRegister.Controls.Add(this.textBox3);
+            this.tabRegister.Controls.Add(this.txtDealerName);
             this.tabRegister.Controls.Add(this.label4);
             this.tabRegister.Controls.Add(this.txtHsnNumber);
             this.tabRegister.Controls.Add(this.txtPacking);
@@ -579,14 +579,14 @@
             this.tabRegister.Text = "Product";
             this.tabRegister.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtDealerName
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(538, 160);
-            this.textBox3.MaxLength = 40;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 21);
-            this.textBox3.TabIndex = 10;
+            this.txtDealerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDealerName.Location = new System.Drawing.Point(538, 160);
+            this.txtDealerName.MaxLength = 25;
+            this.txtDealerName.Name = "txtDealerName";
+            this.txtDealerName.Size = new System.Drawing.Size(152, 21);
+            this.txtDealerName.TabIndex = 10;
             // 
             // label4
             // 
@@ -601,7 +601,7 @@
             // 
             this.txtHsnNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHsnNumber.Location = new System.Drawing.Point(174, 49);
-            this.txtHsnNumber.MaxLength = 12;
+            this.txtHsnNumber.MaxLength = 10;
             this.txtHsnNumber.Name = "txtHsnNumber";
             this.txtHsnNumber.Size = new System.Drawing.Size(152, 21);
             this.txtHsnNumber.TabIndex = 3;
@@ -619,7 +619,7 @@
             // 
             this.txtReminderAfter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReminderAfter.Location = new System.Drawing.Point(538, 122);
-            this.txtReminderAfter.MaxLength = 5;
+            this.txtReminderAfter.MaxLength = 9;
             this.txtReminderAfter.Name = "txtReminderAfter";
             this.txtReminderAfter.Size = new System.Drawing.Size(152, 21);
             this.txtReminderAfter.TabIndex = 8;
@@ -638,7 +638,7 @@
             // 
             this.txtPurchaseRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPurchaseRate.Location = new System.Drawing.Point(538, 49);
-            this.txtPurchaseRate.MaxLength = 12;
+            this.txtPurchaseRate.MaxLength = 10;
             this.txtPurchaseRate.Name = "txtPurchaseRate";
             this.txtPurchaseRate.Size = new System.Drawing.Size(152, 21);
             this.txtPurchaseRate.TabIndex = 4;
@@ -648,7 +648,7 @@
             // 
             this.txtSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSize.Location = new System.Drawing.Point(172, 158);
-            this.txtSize.MaxLength = 40;
+            this.txtSize.MaxLength = 50;
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(152, 21);
             this.txtSize.TabIndex = 9;
@@ -657,7 +657,7 @@
             // 
             this.txtSellingRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSellingRate.Location = new System.Drawing.Point(538, 84);
-            this.txtSellingRate.MaxLength = 12;
+            this.txtSellingRate.MaxLength = 10;
             this.txtSellingRate.Name = "txtSellingRate";
             this.txtSellingRate.Size = new System.Drawing.Size(152, 21);
             this.txtSellingRate.TabIndex = 6;
@@ -758,7 +758,7 @@
             // 
             this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantity.Location = new System.Drawing.Point(174, 122);
-            this.txtQuantity.MaxLength = 12;
+            this.txtQuantity.MaxLength = 10;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(152, 21);
             this.txtQuantity.TabIndex = 7;
@@ -806,6 +806,7 @@
             // 
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductName.Location = new System.Drawing.Point(174, 13);
+            this.txtProductName.MaxLength = 50;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(152, 21);
             this.txtProductName.TabIndex = 1;
@@ -976,7 +977,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBrandSearch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDealerName;
         private System.Windows.Forms.Label label4;
     }
 }

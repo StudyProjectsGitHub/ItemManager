@@ -253,7 +253,7 @@ namespace ProductManageDesktop
                         Sell_Rate = Convert.ToDecimal((txtSellingRate.Text.Trim())),
                         Quantity = Convert.ToInt32(txtQuantity.Text.Trim()),
                         Reminder = Convert.ToInt32(txtReminderAfter.Text.Trim()),
-                        DealerName = txtSize.Text.Trim(),
+                        DealerName = txtDealerName.Text.Trim(),
                         Purchase_Date = System.DateTime.Now,
                         LastUpdated_Date = System.DateTime.Now
                     };
@@ -637,6 +637,7 @@ namespace ProductManageDesktop
                         productMasterUpdate.BrandName = Convert.ToString(txtSBrandName.Text.Trim());
                         productMasterUpdate.Size = Convert.ToString(txtSSize.Text.Trim());
                         productMasterUpdate.DealerName = Convert.ToString(txtSDealer.Text.Trim());
+                        productMasterUpdate.LastUpdated_Date = System.DateTime.Now;
 
                     }
                     var flag = this.productMasterService.Update(productMasterUpdate);
@@ -719,6 +720,7 @@ namespace ProductManageDesktop
             txtQuantity.Text = string.Empty;
             txtReminderAfter.Text = string.Empty;
             txtSize.Text = string.Empty;
+            txtDealerName.Text = string.Empty;
 
         }
 

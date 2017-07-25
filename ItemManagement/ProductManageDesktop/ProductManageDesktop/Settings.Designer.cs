@@ -25,7 +25,7 @@ namespace ProductManageDesktop {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("demo")]
+        [global::System.Configuration.DefaultSettingValueAttribute("shyam")]
         public string Username {
             get {
                 return ((string)(this["Username"]));
@@ -37,7 +37,7 @@ namespace ProductManageDesktop {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("demo123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("shyam123")]
         public string Password {
             get {
                 return ((string)(this["Password"]));
