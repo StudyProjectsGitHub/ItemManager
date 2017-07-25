@@ -33,6 +33,7 @@ namespace ProductManageDesktop
         /// </summary>
         private int productId;
         private bool IsAdd = false;
+        private int tempQuantity = 0;
         #endregion
 
         public MainForm()
@@ -41,6 +42,8 @@ namespace ProductManageDesktop
             this.productMasterService = new ProductMasterService();
             this.productHistoryService = new ProductHistoryService();
             this.InitilizeDataGridViewStyle(dgCurrentStock);
+            DataTable data = this.productMasterService.GetAll();
+            this.LoadDataGridView(data, dgCurrentStock);
         }
 
         #region Common Methods  
@@ -418,6 +421,7 @@ namespace ProductManageDesktop
                     txtSHSNNumber.Text = dataRow["HSN"].ToString();
                     txtSPacking.Text = dataRow["Packing"].ToString() == null ? string.Empty : dataRow["Packing"].ToString();
                     txtSQuantity.Text = dataRow["Quantity"].ToString() == null ? "0" : dataRow["Quantity"].ToString();
+                    tempQuantity = dataRow["Quantity"] == null ? 0 : Convert.ToInt32(dataRow["Quantity"]);
                     txtSPurchaseRate.Text = dataRow["Purchase_Rate"].ToString() == null ? "0.0" : dataRow["Purchase_Rate"].ToString();
                     txtSSellingRate.Text = dataRow["Sell_Rate"].ToString() == null ? "0.0" : dataRow["Sell_Rate"].ToString();
                     txtSReminderAfter.Text = dataRow["Reminder"].ToString() == null ? "0" : dataRow["Reminder"].ToString();
@@ -475,6 +479,10 @@ namespace ProductManageDesktop
                 if (validateQuantity(IsAdd))
                 {
                     UpdateMasterRecord(IsAdd);
+                }
+                else
+                {
+                    MessageBox.Show("You opt to take " + "  " + txtSQuantity.Text.Trim() + " " + "units of Quantity to the Shop from Godown! \n  Which is more than the Godown Stock !", "Stock Incorrect!", MessageBoxButtons.OK);
                 }
 
             }
@@ -566,7 +574,12 @@ namespace ProductManageDesktop
             {
                 // TO:DO Validation that u cant add more than godown quantity to the shop
                 if (txtSQuantity.Text.Trim() != string.Empty)
-                    return true;
+                {
+                    if (tempQuantity < Convert.ToInt32(txtSQuantity.Text.Trim()))
+                        return false;
+                    else
+                        return true;
+                }
                 else
                     return false;
 
