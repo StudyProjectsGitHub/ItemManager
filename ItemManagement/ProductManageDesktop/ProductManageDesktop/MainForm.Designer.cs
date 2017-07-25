@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mnuTab = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.dgCurrentStock = new System.Windows.Forms.DataGridView();
@@ -131,6 +132,7 @@
             // 
             // tabStock
             // 
+            this.tabStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabStock.Controls.Add(this.dgCurrentStock);
             this.tabStock.Location = new System.Drawing.Point(4, 24);
             this.tabStock.Name = "tabStock";
@@ -150,6 +152,7 @@
             // tabSearchManage
             // 
             this.tabSearchManage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tabSearchManage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabSearchManage.Controls.Add(this.txtSSize);
             this.tabSearchManage.Controls.Add(this.label1);
             this.tabSearchManage.Controls.Add(this.txtSDealer);
@@ -239,6 +242,8 @@
             // 
             // btnSDelete
             // 
+            this.btnSDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnSDelete.Image")));
+            this.btnSDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSDelete.Location = new System.Drawing.Point(892, 481);
             this.btnSDelete.Name = "btnSDelete";
             this.btnSDelete.Size = new System.Drawing.Size(103, 27);
@@ -249,6 +254,8 @@
             // 
             // btnSUpdate
             // 
+            this.btnSUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnSUpdate.Image")));
+            this.btnSUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSUpdate.Location = new System.Drawing.Point(765, 481);
             this.btnSUpdate.Name = "btnSUpdate";
             this.btnSUpdate.Size = new System.Drawing.Size(97, 27);
@@ -492,6 +499,8 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefresh.Location = new System.Drawing.Point(859, 28);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 28);
@@ -502,6 +511,8 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Location = new System.Drawing.Point(744, 28);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
@@ -523,6 +534,7 @@
             // tabRegistration
             // 
             this.tabRegistration.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tabRegistration.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabRegistration.Controls.Add(this.tabControl2);
             this.tabRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabRegistration.Location = new System.Drawing.Point(4, 24);
@@ -539,11 +551,13 @@
             this.tabControl2.Location = new System.Drawing.Point(8, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(998, 267);
+            this.tabControl2.Size = new System.Drawing.Size(971, 266);
             this.tabControl2.TabIndex = 5;
             // 
             // tabRegister
             // 
+            this.tabRegister.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabRegister.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabRegister.Controls.Add(this.txtDealerName);
             this.tabRegister.Controls.Add(this.label4);
             this.tabRegister.Controls.Add(this.txtHsnNumber);
@@ -574,10 +588,9 @@
             this.tabRegister.Location = new System.Drawing.Point(4, 25);
             this.tabRegister.Name = "tabRegister";
             this.tabRegister.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegister.Size = new System.Drawing.Size(990, 238);
+            this.tabRegister.Size = new System.Drawing.Size(963, 237);
             this.tabRegister.TabIndex = 0;
             this.tabRegister.Text = "Product";
-            this.tabRegister.UseVisualStyleBackColor = true;
             // 
             // txtDealerName
             // 
@@ -776,6 +789,8 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(383, 195);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 28);
@@ -831,6 +846,7 @@
             // 
             // tabViewSummary
             // 
+            this.tabViewSummary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabViewSummary.Controls.Add(this.lblHeader);
             this.tabViewSummary.Controls.Add(this.panel1);
             this.tabViewSummary.Location = new System.Drawing.Point(4, 24);
