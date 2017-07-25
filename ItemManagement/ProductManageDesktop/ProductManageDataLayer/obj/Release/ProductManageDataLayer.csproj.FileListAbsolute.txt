@@ -5,5 +5,6 @@ D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductMana
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.SqlServer.dll
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.xml
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\bin\Release\EntityFramework.SqlServer.xml
+D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Release\ProductManageDataLayer.csprojResolveAssemblyReference.cache
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Release\ProductManageDataLayer.dll
 D:\Study Projects\ItemManagement\ItemManagement\ProductManageDesktop\ProductManageDataLayer\obj\Release\ProductManageDataLayer.pdb

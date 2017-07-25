@@ -502,11 +502,8 @@ namespace ProductManageDesktop
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    // Validate the Quantity 
-                    if (validateQuantity(IsAdd))
-                    {
+                    if (txtSQuantity.Text.Trim() != string.Empty)
                         UpdateMasterRecord(IsAdd);
-                    }
 
                 }
 
@@ -550,6 +547,8 @@ namespace ProductManageDesktop
                     p.Note = "";
                     p.Date_Edited = System.DateTime.Now;
                     productHistoryService.Create(p);
+                    DataTable data = this.productMasterService.GetAll();
+                    this.LoadDataGridView(data, dgvSearchGridview);
                 }
 
                 if (success)
@@ -709,7 +708,7 @@ namespace ProductManageDesktop
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
-        
+
             }
             catch (Exception ex)
             {

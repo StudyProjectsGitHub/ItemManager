@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManageDesktop", "Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManageDataLayer", "ProductManageDataLayer\ProductManageDataLayer.csproj", "{0F536F80-ADB2-4E5B-8FFE-29E9535865FA}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ManageSetup", "ManageSetup\ManageSetup.vdproj", "{F406A140-0A49-482C-A63F-E8A5A5BBD284}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProductInstaller", "ProductInstaller\ProductInstaller.vdproj", "{12237019-B380-447C-82DF-9C85AB69602A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +24,8 @@ Global
 		{0F536F80-ADB2-4E5B-8FFE-29E9535865FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F536F80-ADB2-4E5B-8FFE-29E9535865FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F536F80-ADB2-4E5B-8FFE-29E9535865FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F406A140-0A49-482C-A63F-E8A5A5BBD284}.Debug|Any CPU.ActiveCfg = Debug
-		{F406A140-0A49-482C-A63F-E8A5A5BBD284}.Release|Any CPU.ActiveCfg = Release
+		{12237019-B380-447C-82DF-9C85AB69602A}.Debug|Any CPU.ActiveCfg = Debug
+		{12237019-B380-447C-82DF-9C85AB69602A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
