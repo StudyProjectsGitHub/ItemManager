@@ -44,6 +44,7 @@ namespace ProductManageDesktop
             this.InitilizeDataGridViewStyle(dgCurrentStock);
             DataTable data = this.productMasterService.GetAll();
             this.LoadDataGridView(data, dgCurrentStock);
+            
         }
 
         #region Common Methods  
@@ -688,27 +689,41 @@ namespace ProductManageDesktop
         {
             try
             {
+                DialogResult dialogResult = MessageBox.Show("You opt to delete data for the  " + "  " + txtSProductName.Text.Trim() + " " + "! \n Are you sure !", "Are you Sure!", MessageBoxButtons.YesNo);
 
-                if (this.productHistoryService.DoesHistoryExists(this.productId))
+                if (dialogResult == DialogResult.Yes)
                 {
 
-                    this.productHistoryService.Delete(this.productId);
+                    if (this.productHistoryService.DoesHistoryExists(this.productId))
+                    {
 
+                        dialogResult = MessageBox.Show("Summary information is available for the product!  " + "  " + txtSProductName.Text.Trim() + " " + "! \n Are you sure you want to delete !", "Are you Sure!", MessageBoxButtons.YesNo);
+
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            this.productHistoryService.Delete(this.productId);
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+
+                    }
+
+                    var flag = this.productMasterService.Delete(this.productId);
+
+                    if (flag)
+                    {
+                        DataTable data = this.productMasterService.GetAll();
+                        this.LoadDataGridView(data, dgvSearchGridview);
+                        MessageBox.Show(
+                            Resources.Delete_Successful_Message,
+                            Resources.Delete_Successful_Message_Title,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
                 }
-
-                var flag = this.productMasterService.Delete(this.productId);
-
-                if (flag)
-                {
-                    DataTable data = this.productMasterService.GetAll();
-                    this.LoadDataGridView(data, dgvSearchGridview);
-                    MessageBox.Show(
-                        Resources.Delete_Successful_Message,
-                        Resources.Delete_Successful_Message_Title,
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }
-
             }
             catch (Exception ex)
             {

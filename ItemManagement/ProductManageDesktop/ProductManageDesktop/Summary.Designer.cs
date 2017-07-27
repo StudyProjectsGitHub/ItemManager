@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Summary));
             this.dgvSummary = new System.Windows.Forms.DataGridView();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.lblBrand = new System.Windows.Forms.Label();
@@ -68,6 +69,8 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.Location = new System.Drawing.Point(378, 493);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(103, 27);
@@ -78,6 +81,8 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Location = new System.Drawing.Point(258, 493);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(97, 27);
@@ -90,7 +95,7 @@
             // 
             this.txtSentTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSentTo.Location = new System.Drawing.Point(147, 410);
-            this.txtSentTo.MaxLength = 12;
+            this.txtSentTo.MaxLength = 15;
             this.txtSentTo.Name = "txtSentTo";
             this.txtSentTo.ReadOnly = true;
             this.txtSentTo.Size = new System.Drawing.Size(152, 20);
@@ -139,6 +144,9 @@
             this.Controls.Add(this.lbl2NoOfChildren);
             this.Controls.Add(this.lbl2HealthStatus);
             this.Controls.Add(this.dgvSummary);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Summary";
             this.Text = "Summary";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummary)).EndInit();

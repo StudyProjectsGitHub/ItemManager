@@ -126,7 +126,7 @@
             this.mnuTab.Location = new System.Drawing.Point(17, 10);
             this.mnuTab.Name = "mnuTab";
             this.mnuTab.SelectedIndex = 0;
-            this.mnuTab.Size = new System.Drawing.Size(1035, 580);
+            this.mnuTab.Size = new System.Drawing.Size(1035, 590);
             this.mnuTab.TabIndex = 1;
             this.mnuTab.SelectedIndexChanged += new System.EventHandler(this.mnuTab_SelectedIndexChanged);
             // 
@@ -182,7 +182,7 @@
             this.tabSearchManage.Location = new System.Drawing.Point(4, 24);
             this.tabSearchManage.Name = "tabSearchManage";
             this.tabSearchManage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSearchManage.Size = new System.Drawing.Size(1027, 552);
+            this.tabSearchManage.Size = new System.Drawing.Size(1027, 562);
             this.tabSearchManage.TabIndex = 1;
             this.tabSearchManage.Text = "Search / Update Stocks";
             // 
@@ -447,7 +447,7 @@
             this.txtSizeSearch.MaxLength = 12;
             this.txtSizeSearch.Name = "txtSizeSearch";
             this.txtSizeSearch.Size = new System.Drawing.Size(181, 21);
-            this.txtSizeSearch.TabIndex = 15;
+            this.txtSizeSearch.TabIndex = 2;
             this.txtSizeSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSizeSearch_KeyUp);
             // 
             // label3
@@ -466,7 +466,7 @@
             this.txtBrandSearch.MaxLength = 12;
             this.txtBrandSearch.Name = "txtBrandSearch";
             this.txtBrandSearch.Size = new System.Drawing.Size(181, 21);
-            this.txtBrandSearch.TabIndex = 13;
+            this.txtBrandSearch.TabIndex = 1;
             this.txtBrandSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBrandSearch_KeyUp);
             // 
             // label2
@@ -485,7 +485,7 @@
             this.txtSProductNameSearch.MaxLength = 12;
             this.txtSProductNameSearch.Name = "txtSProductNameSearch";
             this.txtSProductNameSearch.Size = new System.Drawing.Size(181, 21);
-            this.txtSProductNameSearch.TabIndex = 1;
+            this.txtSProductNameSearch.TabIndex = 0;
             this.txtSProductNameSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSProductNameSearch_KeyUp);
             // 
             // label8
@@ -540,7 +540,7 @@
             this.tabRegistration.Location = new System.Drawing.Point(4, 24);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistration.Size = new System.Drawing.Size(1027, 552);
+            this.tabRegistration.Size = new System.Drawing.Size(1027, 562);
             this.tabRegistration.TabIndex = 0;
             this.tabRegistration.Text = "Add Product";
             // 
@@ -893,9 +893,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 602);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1072, 610);
             this.Controls.Add(this.mnuTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lucky Hardware";
