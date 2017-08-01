@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_183D98A7635DDA88E3C96099D138F572"
+        "OwnerKey" = "8:_B846CB3D74A04BA587339002A0FF3DF6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_280E28C062EE4D2E802EC41A10CF1142"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_52EA32A5EA47CA1E80A1726B83D2AB53"
         "OwnerKey" = "8:_B846CB3D74A04BA587339002A0FF3DF6"
         "MsmSig" = "8:_UNDEFINED"
@@ -34,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_A4649634A4702412D2D6B052A7806E49"
-        "OwnerKey" = "8:_D2BED614A7C8A8E2EFF7727463B78BC2"
+        "OwnerKey" = "8:_183D98A7635DDA88E3C96099D138F572"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,26 +81,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D2BED614A7C8A8E2EFF7727463B78BC2"
-        "OwnerKey" = "8:_B846CB3D74A04BA587339002A0FF3DF6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8BBE343D4FA1F9F9902A91C82F507845"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D2BED614A7C8A8E2EFF7727463B78BC2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B846CB3D74A04BA587339002A0FF3DF6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_183D98A7635DDA88E3C96099D138F572"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -115,6 +115,12 @@
         "OwnerKey" = "8:_A4649634A4702412D2D6B052A7806E49"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8BBE343D4FA1F9F9902A91C82F507845"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -133,6 +139,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -149,6 +171,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -178,6 +216,57 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_183D98A7635DDA88E3C96099D138F572"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ProductManageDataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_183D98A7635DDA88E3C96099D138F572"
+                    {
+                    "Name" = "8:ProductManageDataLayer.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ProductManageDataLayer.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5406170ACDD54E7B8EFCC7142333EDAE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_280E28C062EE4D2E802EC41A10CF1142"
+            {
+            "SourcePath" = "8:D:\\Icons-Land-Multiple-Smiley-Fish-Movie.ico"
+            "TargetName" = "8:Icons-Land-Multiple-Smiley-Fish-Movie.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_B0191A6309884F63BA371B182603B25F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_52EA32A5EA47CA1E80A1726B83D2AB53"
             {
             "AssemblyRegister" = "3:1"
@@ -333,37 +422,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D2BED614A7C8A8E2EFF7727463B78BC2"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ProductManageDataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_D2BED614A7C8A8E2EFF7727463B78BC2"
-                    {
-                    "Name" = "8:ProductManageDataLayer.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ProductManageDataLayer.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_5406170ACDD54E7B8EFCC7142333EDAE"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -419,22 +477,22 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ProductInstaller"
+        "ProductName" = "8:Godown Manager"
         "ProductCode" = "8:{86418432-1474-4CD9-A95B-E695A2B715DA}"
-        "PackageCode" = "8:{2248F8EB-2D5A-4E22-869A-F7F7DA7FA555}"
+        "PackageCode" = "8:{CA557C09-8F4E-49FC-BB02-0D4CC73565AB}"
         "UpgradeCode" = "8:{FE921164-E2E9-4D2B-9E7D-25D34EA7195C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
+        "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Lucky Hardware"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:ProductInstaller"
+        "Title" = "8:Godown Manager"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Mohnish"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -541,6 +599,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_943E8EF130624C50836F4F452C5BED05"
+            {
+            "Name" = "8:Godown Manager"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_B846CB3D74A04BA587339002A0FF3DF6"
+            "Folder" = "8:_B0191A6309884F63BA371B182603B25F"
+            "WorkingFolder" = "8:_5406170ACDD54E7B8EFCC7142333EDAE"
+            "Icon" = "8:_280E28C062EE4D2E802EC41A10CF1142"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
